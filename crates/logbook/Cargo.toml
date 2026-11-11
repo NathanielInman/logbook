@@ -1,0 +1,21 @@
+[package]
+name = "logbook"
+description = "Logbook: the daemon, CLI and waybar module"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "logbook"
+path = "src/main.rs"
+
+[dependencies]
+logbook-core = { path = "../logbook-core" }
+bar-anchor = { path = "../bar-anchor" }
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+libc.workspace = true
+pipewire = "0.10"
