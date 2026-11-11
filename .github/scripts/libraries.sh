@@ -5,8 +5,9 @@
 # bindings are generated from.
 set -euxo pipefail
 version="${1:-v1.3.0}"
-sudo apt-get update
-sudo apt-get install -y libgtk-4-dev libwayland-dev wayland-protocols meson ninja-build \
+apt="sudo apt-get -o Acquire::Retries=5 -o Acquire::http::Timeout=30"
+$apt update
+$apt install -y libgtk-4-dev libwayland-dev wayland-protocols meson ninja-build \
   libpipewire-0.3-dev libspa-0.2-dev clang libclang-dev
 git clone --depth 1 --branch "$version" https://github.com/wmww/gtk4-layer-shell /tmp/gtk4-layer-shell
 cd /tmp/gtk4-layer-shell
