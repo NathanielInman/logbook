@@ -6,6 +6,7 @@
 pub mod config;
 pub mod library;
 pub mod media;
+pub mod mic;
 pub mod model;
 pub mod paths;
 pub mod plan;
