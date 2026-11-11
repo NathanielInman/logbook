@@ -4,6 +4,8 @@
 //! PipeWire's graph, voxtype's state and Switchyard's snapshot.
 
 pub mod config;
+pub mod library;
+pub mod media;
 pub mod model;
 pub mod paths;
 pub mod protocol;
