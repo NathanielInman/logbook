@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # Ubuntu 24.04 does not package gtk4-layer-shell; build it from source.
-# Installs both the shared and the static library under /usr/local.
+# Installs both the shared and the static library under /usr/local. Also
+# installs PipeWire's headers and libclang, which the pipewire crate's
+# bindings are generated from.
 set -euxo pipefail
 version="${1:-v1.3.0}"
 sudo apt-get update
-sudo apt-get install -y libgtk-4-dev libwayland-dev wayland-protocols meson ninja-build
+sudo apt-get install -y libgtk-4-dev libwayland-dev wayland-protocols meson ninja-build \
+  libpipewire-0.3-dev libspa-0.2-dev clang libclang-dev
 git clone --depth 1 --branch "$version" https://github.com/wmww/gtk4-layer-shell /tmp/gtk4-layer-shell
 cd /tmp/gtk4-layer-shell
 meson setup build --prefix=/usr/local -Ddefault_library=both -Dintrospection=false -Dvapi=false -Dexamples=false -Ddocs=false -Dtests=false
