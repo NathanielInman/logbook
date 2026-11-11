@@ -862,6 +862,7 @@ impl Drawer {
         }
         self.sigs.borrow_mut()[1] = sig;
         clear(&self.others);
+        self.others.set_visible(!others.is_empty());
         if others.is_empty() {
             return;
         }
@@ -902,6 +903,7 @@ impl Drawer {
         self.sigs.borrow_mut()[2] = sig;
         clear(&self.work);
         *self.eta.borrow_mut() = None;
+        self.work.set_visible(job.is_some());
         let Some(j) = job else {
             return;
         };
@@ -1054,6 +1056,7 @@ impl Drawer {
         }
         self.sigs.borrow_mut()[3] = sig;
         clear(&self.recent);
+        self.recent.set_visible(!s.recordings.is_empty());
         if s.recordings.is_empty() {
             return;
         }
