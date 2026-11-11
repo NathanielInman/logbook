@@ -257,10 +257,15 @@ pub fn read_mp4(path: &Path) -> Option<f64> {
 mod tests {
     use super::*;
 
+    /// A file in a folder of its own, removed by `done`.
     fn tmp(name: &str) -> std::path::PathBuf {
-        let d = std::env::temp_dir().join(format!("logbook-media-{}", std::process::id()));
+        let d = std::env::temp_dir().join(format!("logbook-media-{}-{name}", std::process::id()));
         std::fs::create_dir_all(&d).unwrap();
         d.join(name)
+    }
+
+    fn done(p: &std::path::Path) {
+        let _ = std::fs::remove_dir_all(p.parent().unwrap());
     }
 
     #[test]
@@ -298,6 +303,8 @@ mod tests {
         assert_eq!(i16::from_le_bytes([bytes[44], bytes[45]]), 16000);
         slice_wav(&src, 2.5, 99.0, &dst).unwrap();
         assert_eq!(read_wav(&dst).unwrap().secs(), 0.5);
+        done(&src);
+        done(&dst);
     }
 
     #[test]
@@ -343,5 +350,6 @@ mod tests {
         assert_eq!(read_mp4(&p), Some(10.0));
         std::fs::write(&p, b"not a movie").unwrap();
         assert_eq!(read_mp4(&p), None);
+        done(&p);
     }
 }
