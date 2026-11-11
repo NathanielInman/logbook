@@ -1,0 +1,150 @@
+/* Logbook drawer default theme. With theme.from = "waybar" the bar's own
+   colors and font replace these tokens. Override anything in
+   ~/.config/logbook/style.css; redefining an @define-color token recolors
+   everything that uses it. */
+
+@define-color lb_panel rgba(30, 32, 36, 0.97);
+@define-color lb_well #15171a;
+@define-color lb_border #41464e;
+@define-color lb_fg #c5c8c6;
+@define-color lb_dim #7c838e;
+@define-color lb_tile rgba(255, 255, 255, 0.035);
+@define-color lb_tile_border rgba(255, 255, 255, 0.07);
+@define-color lb_tile_hover #33373d;
+@define-color lb_accent #88c0d0;
+@define-color lb_rec #bf616a;
+@define-color lb_busy #ebcb8b;
+@define-color lb_ok #a3be8c;
+@define-color lb_idle #555b64;
+
+window.logbook {
+  background: transparent;
+  color: @lb_fg;
+  font-family: monospace;
+  font-size: 13px;
+}
+window.logbook * { font-family: inherit; }
+
+.panel {
+  background: @lb_panel;
+  border: 1px solid @lb_border;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.35);
+  padding: 14px;
+}
+
+.dim { color: @lb_dim; }
+.small { font-size: 11px; }
+.glyph { font-size: 14px; }
+
+/* ---- header ---- */
+.lamp { color: @lb_idle; transition: color 200ms ease; }
+.lamp.recording, .lamp.dictating { color: @lb_rec; }
+.lamp.processing, .lamp.transcribing { color: @lb_busy; }
+.lamp.mic { color: @lb_accent; }
+.brand { font-weight: bold; letter-spacing: 2px; font-size: 12px; }
+.sub { color: @lb_dim; font-size: 11px; }
+.chip {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: @lb_dim;
+  background: alpha(@lb_idle, 0.2);
+}
+.chip.recording, .chip.dictating { color: @lb_rec; background: alpha(@lb_rec, 0.15); }
+.chip.processing, .chip.transcribing { color: @lb_busy; background: alpha(@lb_busy, 0.15); }
+.chip.mic { color: @lb_accent; background: alpha(@lb_accent, 0.14); }
+
+.notice { color: @lb_busy; font-size: 11px; }
+
+/* ---- tabs ---- */
+.tabs button {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  color: @lb_dim;
+  min-height: 0;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.tabs button:hover { color: @lb_fg; background: @lb_tile_hover; }
+.tabs button:checked { color: @lb_fg; background: @lb_tile; box-shadow: inset 0 -2px @lb_accent; }
+
+/* ---- cards ---- */
+.card {
+  background: @lb_tile;
+  border: 1px solid @lb_tile_border;
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+.card.rec { background: alpha(@lb_rec, 0.07); border-color: alpha(@lb_rec, 0.35); }
+.card.busy { background: alpha(@lb_busy, 0.06); border-color: alpha(@lb_busy, 0.3); }
+.t-label {
+  color: @lb_dim;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.big {
+  font-size: 26px;
+  font-weight: bold;
+  font-feature-settings: "tnum";
+}
+.big.rec, .meter { color: @lb_rec; }
+.busy-text { color: @lb_busy; }
+.bad { color: @lb_rec; }
+.glyph.mic { color: @lb_accent; }
+
+progressbar.prog trough {
+  min-height: 5px;
+  border-radius: 3px;
+  background: @lb_tile_border;
+  border: none;
+}
+progressbar.prog progress {
+  min-height: 5px;
+  border-radius: 3px;
+  background: @lb_busy;
+  border: none;
+}
+
+/* ---- buttons ---- */
+.panel button {
+  background: @lb_tile;
+  border: 1px solid @lb_tile_border;
+  border-radius: 9px;
+  box-shadow: none;
+  color: @lb_fg;
+  min-height: 0;
+  min-width: 0;
+  padding: 5px 11px;
+}
+.panel button:hover { background: @lb_tile_hover; }
+.panel button.primary {
+  background: @lb_accent;
+  border-color: @lb_accent;
+  color: @lb_well;
+}
+.panel button.primary:hover { background: shade(@lb_accent, 1.08); }
+.panel button.danger {
+  background: @lb_rec;
+  border-color: @lb_rec;
+  color: @lb_well;
+}
+.panel button.danger:hover { background: shade(@lb_rec, 1.08); }
+.panel button.small { padding: 2px 9px; font-size: 11.5px; }
+.panel button.icon { padding: 2px 7px; }
+
+/* ---- lists ---- */
+.item {
+  padding: 6px 8px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+}
+.item:hover { background: @lb_tile; border-color: @lb_tile_border; }
+.item .kind { color: @lb_accent; font-size: 16px; }
+.item .title { font-weight: bold; }
+
+.foot { color: @lb_dim; font-size: 10.5px; }
