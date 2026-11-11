@@ -14,7 +14,9 @@ pub mod protocol;
 pub mod text;
 pub mod time;
 pub mod transport;
+pub mod voxtype;
 pub mod waybar;
+pub mod yard;
 
 pub use bar_anchor::{Anchor, Edge};
 
