@@ -132,12 +132,30 @@ pub fn length(secs: f64) -> String {
     }
 }
 
+const DAYS: [&str; 7] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHS: [&str; 12] = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+fn weekday(t: f64) -> &'static str {
+    let mut tm: libc::tm = unsafe { std::mem::zeroed() };
+    let secs = t.floor() as libc::time_t;
+    unsafe {
+        libc::localtime_r(&secs, &mut tm);
+    }
+    DAYS[tm.tm_wday.clamp(0, 6) as usize]
+}
+
+fn month(l: Local) -> &'static str {
+    MONTHS[(l.month as usize).clamp(1, 12) - 1]
+}
+
 /// `today 10:02`, `yesterday 14:30`, `Mon 9 Nov 08:15`.
 pub fn when(t: f64, now: f64) -> String {
     let l = local(t);
     let n = local(now);
     let hm = format!("{:02}:{:02}", l.hour, l.min);
-    let day = |x: Local| {
+    let noon = |x: Local| {
         unix(Local {
             hour: 12,
             min: 0,
@@ -145,28 +163,25 @@ pub fn when(t: f64, now: f64) -> String {
             ..x
         })
     };
-    let days = ((day(n) - day(l)) / 86400.0).round() as i64;
-    match days {
+    match ((noon(n) - noon(l)) / 86400.0).round() as i64 {
         0 => format!("today {hm}"),
         1 => format!("yesterday {hm}"),
-        _ => {
-            const DAYS: [&str; 7] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-            const MONTHS: [&str; 12] = [
-                "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-            ];
-            let mut tm: libc::tm = unsafe { std::mem::zeroed() };
-            let secs = t.floor() as libc::time_t;
-            unsafe {
-                libc::localtime_r(&secs, &mut tm);
-            }
-            format!(
-                "{} {} {} {hm}",
-                DAYS[tm.tm_wday.clamp(0, 6) as usize],
-                l.day,
-                MONTHS[(l.month as usize).clamp(1, 12) - 1]
-            )
-        }
+        _ => format!("{} {} {} {hm}", weekday(t), l.day, month(l)),
     }
+}
+
+/// `Wed 11 Nov 2026 10:02`, for a transcript's heading.
+pub fn long(t: f64) -> String {
+    let l = local(t);
+    format!(
+        "{} {} {} {} {:02}:{:02}",
+        weekday(t),
+        l.day,
+        month(l),
+        l.year,
+        l.hour,
+        l.min
+    )
 }
 
 #[cfg(test)]
@@ -218,5 +233,6 @@ mod tests {
         assert_eq!(when(now - 3600.0, now), "today 08:00");
         assert_eq!(when(now - 86400.0, now), "yesterday 09:00");
         assert_eq!(when(now - 2.0 * 86400.0, now), "Mon 9 Nov 09:00");
+        assert_eq!(long(now), "Wed 11 Nov 2026 09:00");
     }
 }
