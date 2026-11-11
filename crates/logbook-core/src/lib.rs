@@ -8,6 +8,7 @@ pub mod library;
 pub mod media;
 pub mod model;
 pub mod paths;
+pub mod plan;
 pub mod protocol;
 pub mod text;
 pub mod time;
