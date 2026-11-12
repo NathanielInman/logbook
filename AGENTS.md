@@ -72,7 +72,8 @@ Update in the same commit:
   rule.
 - The README for anything a new user meets (CLI, keys, install, config).
 - `docs/assets/drawer.png` when the drawer looks different (render it with
-  `--render`).
+  `--render`), and `drawer()` in `docs/assets/hero.py` to match (then run
+  `python3 docs/assets/hero.py`). dot-files' bar tour ports that function.
 
 Commits are conventional, scoped by area: `anchor`, `core`, `plan`, `mic`,
 `daemon`, `cli`, `board`, `docs`, `ci`.
