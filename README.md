@@ -1,7 +1,11 @@
+<p align="center">
+  <img src="docs/assets/mark.svg" width="34" alt="">
+</p>
+
 <h1 align="center">Logbook</h1>
 
 <p align="center">
-  <img src="docs/assets/drawer.png" width="440" alt="The Logbook drawer open on its Now tab, on air: a meeting recording from the default input with a red running clock, a level meter, two marks, and Stop and Mark buttons. Below it the three most recent recordings, two meetings with their transcripts ready and Copy buttons, and a screen capture with an Open button.">
+  <img src="docs/assets/hero.svg" width="100%" alt="A floating waybar, its desk pill holding Logbook's lamp: a dim mic. A click on Join in a video call in Chrome turns the lamp frost with the word chrome. A click on the lamp springs the Logbook drawer out of it on the Now tab: the mic is in use and Logbook is not recording, with Record meeting, Record screen and Dictate, then chrome on the Shure MV7, then the three most recent recordings. Record meeting puts it on air: the lamp turns red with a running clock, the do not disturb bell turns amber and the song title leaves the bar, and the drawer shows the meeting with a big red clock, a level meter, Stop and Mark. Time skips ahead to chunk 2, a click on Mark adds 1 mark at 00:21:05, and a click on Stop at 00:24:13 hands the meeting to its transcript: the lamp turns amber and counts 1/3, 2/3, 3/3 while the drawer shows the transcript running in Switchyard with a progress bar, do not disturb turns off and the song comes back. When the transcript is ready the lamp is frost again, since Chrome still has the mic, and the meeting from 14:02 tops the recent list with Copy. Copy is clicked, a click outside closes the drawer, and Leave ends the call: the lamp goes dim.">
 </p>
 
 <p align="center">
@@ -75,6 +79,10 @@ Click it for the drawer, right-click to stop everything, middle-click to
 dictate.
 
 ## What's in the drawer
+
+<p align="center">
+  <img src="docs/assets/drawer.png" width="410" alt="The Logbook drawer open on its Now tab, on air: a meeting recording from the default input with a red running clock, a level meter, two marks, and Stop and Mark buttons. Below it the three most recent recordings, two meetings with their transcripts ready and Copy buttons, and a screen capture with an Open button.">
+</p>
 
 **Now:** the live recording with its clock, a level meter, Stop and Mark, or
 Record meeting, Record screen and Dictate when you're off air. Below that,
