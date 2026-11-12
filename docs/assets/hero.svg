@@ -1,0 +1,1030 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" font-family="JetBrains Mono, DejaVu Sans Mono, Menlo, Consolas, monospace" xml:space="preserve" role="img" aria-label="A floating waybar, its desk pill holding Logbook's lamp: a dim mic. A click on Join in a video call in Chrome turns the lamp frost with the word chrome. A click on the lamp springs the Logbook drawer out of it on the Now tab: the mic is in use and Logbook is not recording, with Record meeting, Record screen and Dictate, then chrome on the Shure MV7, then the three most recent recordings. Record meeting puts it on air: the lamp turns red with a running clock, the do not disturb bell turns amber and the song title leaves the bar, and the drawer shows the meeting with a big red clock, a level meter, Stop and Mark. Time skips ahead to chunk 2, a click on Mark adds 1 mark at 00:21:05, and a click on Stop at 00:24:13 hands the meeting to its transcript: the lamp turns amber and counts 1/3, 2/3, 3/3 while the drawer shows the transcript running in Switchyard with a progress bar, do not disturb turns off and the song comes back. When the transcript is ready the lamp is frost again, since Chrome still has the mic, and the meeting from 14:02 tops the recent list with Copy. Copy is clicked, a click outside closes the drawer, and Leave ends the call: the lamp goes dim.">
+<style>
+text { white-space: pre; }
+.a { animation-duration: 16s; animation-iteration-count: infinite; animation-timing-function: linear; animation-fill-mode: both; }
+.lbm { transform-box: fill-box; transform-origin: center; animation: lbm .5s ease-in-out infinite alternate; }
+@keyframes lbm { from { transform: scaleY(.25); } }
+@media (prefers-reduced-motion: reduce) { .lbm { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  .a { animation: none !important; }
+  #cursor, .ripple { display: none; }
+}
+@keyframes k0 { 0.00% { opacity: 1; } 5.62% { opacity: 1; } 6.88% { opacity: 0; } 93.75% { opacity: 0; } 95.00% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k1 { 0.00% { opacity: 0; } 4.94% { opacity: 0; } 5.00% { opacity: 1; } 6.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k2 { 0.00% { opacity: 0; } 5.62% { opacity: 0; } 6.88% { opacity: 1; } 85.62% { opacity: 1; } 86.87% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k3 { 0.00% { opacity: 0; } 84.94% { opacity: 0; } 85.00% { opacity: 1; } 86.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k4 { 0.00% { opacity: 0; } 85.62% { opacity: 0; } 86.87% { opacity: 1; } 93.75% { opacity: 1; } 95.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k5 { 0.00% { opacity: 1; } 30.63% { opacity: 1; } 30.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k6 { 0.00% { opacity: 0; } 30.63% { opacity: 0; } 30.81% { opacity: 1; } 31.56% { opacity: 1; } 31.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k7 { 0.00% { opacity: 0; } 31.56% { opacity: 0; } 31.75% { opacity: 1; } 32.50% { opacity: 1; } 32.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k8 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.69% { opacity: 1; } 33.44% { opacity: 1; } 33.63% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k9 { 0.00% { opacity: 0; } 33.44% { opacity: 0; } 33.63% { opacity: 1; } 48.75% { opacity: 1; } 48.94% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k10 { 0.00% { opacity: 0; } 48.75% { opacity: 0; } 48.94% { opacity: 1; } 49.69% { opacity: 1; } 49.88% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k11 { 0.00% { opacity: 0; } 49.69% { opacity: 0; } 49.88% { opacity: 1; } 93.75% { opacity: 1; } 93.94% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k12 { 0.00% { opacity: 0; } 93.75% { opacity: 0; } 93.94% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k13 { 0.00% { opacity: 1; } 6.25% { opacity: 1; } 6.38% { opacity: 0; } 86.25% { opacity: 0; } 86.38% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k14 { 0.00% { opacity: 0; } 6.25% { opacity: 0; } 6.38% { opacity: 1; } 21.25% { opacity: 1; } 21.38% { opacity: 0; } 71.25% { opacity: 0; } 71.38% { opacity: 1; } 86.25% { opacity: 1; } 86.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k15 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.38% { opacity: 1; } 58.13% { opacity: 1; } 58.25% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k16 { 0.00% { opacity: 0; } 58.13% { opacity: 0; } 58.25% { opacity: 1; } 71.25% { opacity: 1; } 71.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k17 { 0.00% { opacity: 0; } 11.56% { opacity: 0; } 12.19% { opacity: 1; } 15.62% { opacity: 1; } 16.25% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k18 { 0.00% { opacity: 1; } 6.25% { opacity: 1; } 6.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k19 { 0.00% { opacity: 0; } 6.25% { opacity: 0; } 6.38% { opacity: 1; } 21.25% { opacity: 1; } 21.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k20 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.38% { opacity: 1; } 27.50% { opacity: 1; } 27.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k21 { 0.00% { opacity: 0; } 27.50% { opacity: 0; } 27.62% { opacity: 1; } 30.63% { opacity: 1; } 30.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k22 { 0.00% { opacity: 0; } 30.63% { opacity: 0; } 30.75% { opacity: 1; } 31.56% { opacity: 1; } 31.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k23 { 0.00% { opacity: 0; } 31.56% { opacity: 0; } 31.69% { opacity: 1; } 32.50% { opacity: 1; } 32.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k24 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.62% { opacity: 1; } 33.44% { opacity: 1; } 33.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k25 { 0.00% { opacity: 0; } 33.44% { opacity: 0; } 33.56% { opacity: 1; } 39.69% { opacity: 1; } 39.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k26 { 0.00% { opacity: 0; } 39.69% { opacity: 0; } 39.81% { opacity: 1; } 45.94% { opacity: 1; } 46.06% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k27 { 0.00% { opacity: 0; } 45.94% { opacity: 0; } 46.06% { opacity: 1; } 48.75% { opacity: 1; } 48.87% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k28 { 0.00% { opacity: 0; } 48.75% { opacity: 0; } 48.87% { opacity: 1; } 49.69% { opacity: 1; } 49.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k29 { 0.00% { opacity: 0; } 49.69% { opacity: 0; } 49.81% { opacity: 1; } 55.94% { opacity: 1; } 56.06% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k30 { 0.00% { opacity: 0; } 55.94% { opacity: 0; } 56.06% { opacity: 1; } 58.13% { opacity: 1; } 58.25% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k31 { 0.00% { opacity: 0; } 58.13% { opacity: 0; } 58.25% { opacity: 1; } 62.50% { opacity: 1; } 62.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k32 { 0.00% { opacity: 0; } 62.50% { opacity: 0; } 62.62% { opacity: 1; } 66.88% { opacity: 1; } 67.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k33 { 0.00% { opacity: 0; } 66.88% { opacity: 0; } 67.00% { opacity: 1; } 71.25% { opacity: 1; } 71.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k34 { 0.00% { opacity: 0; } 71.25% { opacity: 0; } 71.38% { opacity: 1; } 86.25% { opacity: 1; } 86.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k35 { 0.00% { opacity: 0; } 86.25% { opacity: 0; } 86.38% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k36 { 0.00% { transform: translateX(0.0px); } 6.24% { transform: translateX(0.0px); } 6.25% { transform: translateX(-58.8px); } 21.24% { transform: translateX(-58.8px); } 21.25% { transform: translateX(-75.6px); } 27.49% { transform: translateX(-75.6px); } 27.50% { transform: translateX(-75.6px); } 30.62% { transform: translateX(-75.6px); } 30.63% { transform: translateX(-75.6px); } 31.56% { transform: translateX(-75.6px); } 31.56% { transform: translateX(-75.6px); } 32.49% { transform: translateX(-75.6px); } 32.50% { transform: translateX(-75.6px); } 33.43% { transform: translateX(-75.6px); } 33.44% { transform: translateX(-75.6px); } 39.68% { transform: translateX(-75.6px); } 39.69% { transform: translateX(-75.6px); } 45.93% { transform: translateX(-75.6px); } 45.94% { transform: translateX(-75.6px); } 48.74% { transform: translateX(-75.6px); } 48.75% { transform: translateX(-75.6px); } 49.68% { transform: translateX(-75.6px); } 49.69% { transform: translateX(-75.6px); } 55.93% { transform: translateX(-75.6px); } 55.94% { transform: translateX(-75.6px); } 58.12% { transform: translateX(-75.6px); } 58.13% { transform: translateX(-33.6px); } 62.49% { transform: translateX(-33.6px); } 62.50% { transform: translateX(-33.6px); } 66.87% { transform: translateX(-33.6px); } 66.88% { transform: translateX(-33.6px); } 71.24% { transform: translateX(-33.6px); } 71.25% { transform: translateX(-58.8px); } 86.24% { transform: translateX(-58.8px); } 86.25% { transform: translateX(0.0px); } 99.99% { transform: translateX(0.0px); } }
+@keyframes k37 { 0.00% { opacity: 1; } 21.56% { opacity: 1; } 21.81% { opacity: 0; } 58.44% { opacity: 0; } 58.69% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k38 { 0.00% { opacity: 0; } 21.56% { opacity: 0; } 21.81% { opacity: 1; } 58.44% { opacity: 1; } 58.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k39 { 0.00% { opacity: 1; } 21.56% { opacity: 1; } 21.81% { opacity: 0; } 58.44% { opacity: 0; } 58.69% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k40 { 0.00% { opacity: 0; } 21.56% { opacity: 0; } 21.81% { opacity: 1; } 58.44% { opacity: 1; } 58.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k41 { 0.00% { transform: translateY(26px) scale(.06); } 12.94% { transform: translateY(26px) scale(.06); } 13.63% { transform: translateY(14px) scale(.5); } 14.25% { transform: translateY(4px) scale(.9); } 14.88% { transform: translateY(-1px) scale(1.035); } 15.62% { transform: translateY(0) scale(.988); } 16.50% { transform: scale(1.006); } 17.50% { transform: scale(1); } 80.50% { transform: scale(1); } 82.81% { transform: translateY(14px) scale(.4); } 100.00% { transform: translateY(14px) scale(.4); } }
+@keyframes k42 { 0.00% { opacity: 0; } 12.94% { opacity: 0; } 13.75% { opacity: 0.85; } 14.25% { opacity: 1; } 80.50% { opacity: 1; } 82.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k43 { 0.00% { opacity: 1; } 21.25% { opacity: 1; } 21.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k44 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.38% { opacity: 1; } 32.50% { opacity: 1; } 32.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k45 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.31% { opacity: 1; } 27.50% { opacity: 1; } 27.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k46 { 0.00% { opacity: 0; } 27.50% { opacity: 0; } 27.56% { opacity: 1; } 30.63% { opacity: 1; } 30.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k47 { 0.00% { opacity: 0; } 30.63% { opacity: 0; } 30.69% { opacity: 1; } 31.56% { opacity: 1; } 31.63% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k48 { 0.00% { opacity: 0; } 31.56% { opacity: 0; } 31.63% { opacity: 1; } 32.50% { opacity: 1; } 32.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k49 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.56% { opacity: 1; } 33.44% { opacity: 1; } 33.50% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k50 { 0.00% { opacity: 0; } 33.44% { opacity: 0; } 33.50% { opacity: 1; } 39.69% { opacity: 1; } 39.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k51 { 0.00% { opacity: 0; } 39.69% { opacity: 0; } 39.75% { opacity: 1; } 45.94% { opacity: 1; } 46.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k52 { 0.00% { opacity: 0; } 45.94% { opacity: 0; } 46.00% { opacity: 1; } 48.75% { opacity: 1; } 48.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k53 { 0.00% { opacity: 0; } 48.75% { opacity: 0; } 48.81% { opacity: 1; } 49.69% { opacity: 1; } 49.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k54 { 0.00% { opacity: 0; } 49.69% { opacity: 0; } 49.75% { opacity: 1; } 55.94% { opacity: 1; } 56.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k55 { 0.00% { opacity: 0; } 55.94% { opacity: 0; } 56.00% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k56 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.62% { opacity: 1; } 42.50% { opacity: 1; } 42.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k57 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.31% { opacity: 1; } 27.50% { opacity: 1; } 27.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k58 { 0.00% { opacity: 0; } 27.50% { opacity: 0; } 27.56% { opacity: 1; } 30.63% { opacity: 1; } 30.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k59 { 0.00% { opacity: 0; } 30.63% { opacity: 0; } 30.69% { opacity: 1; } 31.56% { opacity: 1; } 31.63% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k60 { 0.00% { opacity: 0; } 31.56% { opacity: 0; } 31.63% { opacity: 1; } 32.50% { opacity: 1; } 32.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k61 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.56% { opacity: 1; } 33.44% { opacity: 1; } 33.50% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k62 { 0.00% { opacity: 0; } 33.44% { opacity: 0; } 33.50% { opacity: 1; } 39.69% { opacity: 1; } 39.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k63 { 0.00% { opacity: 0; } 39.69% { opacity: 0; } 39.75% { opacity: 1; } 45.94% { opacity: 1; } 46.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k64 { 0.00% { opacity: 0; } 45.94% { opacity: 0; } 46.00% { opacity: 1; } 48.75% { opacity: 1; } 48.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k65 { 0.00% { opacity: 0; } 48.75% { opacity: 0; } 48.81% { opacity: 1; } 49.69% { opacity: 1; } 49.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k66 { 0.00% { opacity: 0; } 49.69% { opacity: 0; } 49.75% { opacity: 1; } 55.94% { opacity: 1; } 56.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k67 { 0.00% { opacity: 0; } 55.94% { opacity: 0; } 56.00% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k68 { 0.00% { opacity: 0; } 42.50% { opacity: 0; } 42.62% { opacity: 1; } 58.13% { opacity: 1; } 58.25% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k69 { 0.00% { opacity: 0; } 21.25% { opacity: 0; } 21.31% { opacity: 1; } 27.50% { opacity: 1; } 27.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k70 { 0.00% { opacity: 0; } 27.50% { opacity: 0; } 27.56% { opacity: 1; } 30.63% { opacity: 1; } 30.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k71 { 0.00% { opacity: 0; } 30.63% { opacity: 0; } 30.69% { opacity: 1; } 31.56% { opacity: 1; } 31.63% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k72 { 0.00% { opacity: 0; } 31.56% { opacity: 0; } 31.63% { opacity: 1; } 32.50% { opacity: 1; } 32.56% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k73 { 0.00% { opacity: 0; } 32.50% { opacity: 0; } 32.56% { opacity: 1; } 33.44% { opacity: 1; } 33.50% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k74 { 0.00% { opacity: 0; } 33.44% { opacity: 0; } 33.50% { opacity: 1; } 39.69% { opacity: 1; } 39.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k75 { 0.00% { opacity: 0; } 39.69% { opacity: 0; } 39.75% { opacity: 1; } 45.94% { opacity: 1; } 46.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k76 { 0.00% { opacity: 0; } 45.94% { opacity: 0; } 46.00% { opacity: 1; } 48.75% { opacity: 1; } 48.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k77 { 0.00% { opacity: 0; } 48.75% { opacity: 0; } 48.81% { opacity: 1; } 49.69% { opacity: 1; } 49.75% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k78 { 0.00% { opacity: 0; } 49.69% { opacity: 0; } 49.75% { opacity: 1; } 55.94% { opacity: 1; } 56.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k79 { 0.00% { opacity: 0; } 55.94% { opacity: 0; } 56.00% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k80 { 0.00% { opacity: 0; } 58.13% { opacity: 0; } 58.25% { opacity: 1; } 62.50% { opacity: 1; } 62.62% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k81 { 0.00% { opacity: 0; } 62.50% { opacity: 0; } 62.62% { opacity: 1; } 66.88% { opacity: 1; } 67.00% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k82 { 0.00% { opacity: 0; } 66.88% { opacity: 0; } 67.00% { opacity: 1; } 71.25% { opacity: 1; } 71.38% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k83 { 0.00% { opacity: 0; } 71.25% { opacity: 0; } 71.38% { opacity: 1; } 100.00% { opacity: 1; } }
+@keyframes k84 { 0.00% { opacity: 0; } 4.94% { opacity: 0; } 5.00% { opacity: 0.9; } 7.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k85 { 0.00% { transform: scale(.3); } 5.00% { transform: scale(.3); } 7.81% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k86 { 0.00% { opacity: 0; } 12.44% { opacity: 0; } 12.50% { opacity: 0.9; } 15.31% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k87 { 0.00% { transform: scale(.3); } 12.50% { transform: scale(.3); } 15.31% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k88 { 0.00% { opacity: 0; } 20.56% { opacity: 0; } 20.62% { opacity: 0.9; } 23.44% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k89 { 0.00% { transform: scale(.3); } 20.62% { transform: scale(.3); } 23.44% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k90 { 0.00% { opacity: 0; } 41.81% { opacity: 0; } 41.88% { opacity: 0.9; } 44.69% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k91 { 0.00% { transform: scale(.3); } 41.88% { transform: scale(.3); } 44.69% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k92 { 0.00% { opacity: 0; } 57.44% { opacity: 0; } 57.50% { opacity: 0.9; } 60.31% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k93 { 0.00% { transform: scale(.3); } 57.50% { transform: scale(.3); } 60.31% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k94 { 0.00% { opacity: 0; } 74.94% { opacity: 0; } 75.00% { opacity: 0.9; } 77.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k95 { 0.00% { transform: scale(.3); } 75.00% { transform: scale(.3); } 77.81% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k96 { 0.00% { opacity: 0; } 79.94% { opacity: 0; } 80.00% { opacity: 0.9; } 82.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k97 { 0.00% { transform: scale(.3); } 80.00% { transform: scale(.3); } 82.81% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k98 { 0.00% { opacity: 0; } 84.94% { opacity: 0; } 85.00% { opacity: 0.9; } 87.81% { opacity: 0; } 100.00% { opacity: 0; } }
+@keyframes k99 { 0.00% { transform: scale(.3); } 85.00% { transform: scale(.3); } 87.81% { transform: scale(1.6); } 100.00% { transform: scale(1.6); } }
+@keyframes k100 { 0.00% { transform: translate(357.0px, 296.0px); } 1.25% { transform: translate(357.0px, 296.0px); } 4.06% { transform: translate(499.0px, 334.0px); } 7.50% { transform: translate(499.0px, 334.0px); } 11.56% { transform: translate(856.2px, 633.0px); } 16.25% { transform: translate(856.2px, 633.0px); } 19.69% { transform: translate(732.7px, 300.0px); } 26.25% { transform: translate(732.7px, 300.0px); } 40.00% { transform: translate(773.2px, 300.0px); } 45.62% { transform: translate(773.2px, 300.0px); } 56.25% { transform: translate(695.2px, 300.0px); } 61.25% { transform: translate(695.2px, 300.0px); } 73.75% { transform: translate(982.4px, 441.5px); } 76.88% { transform: translate(982.4px, 441.5px); } 79.06% { transform: translate(467.0px, 146.0px); } 81.25% { transform: translate(467.0px, 146.0px); } 84.06% { transform: translate(395.0px, 548.0px); } 89.38% { transform: translate(395.0px, 548.0px); } 96.88% { transform: translate(357.0px, 296.0px); } 100.00% { transform: translate(357.0px, 296.0px); } }</style>
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14171c"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+<radialGradient id="haze1" cx=".85" cy="0" r=".75"><stop offset="0" stop-color="#88c0d0" stop-opacity=".13"/><stop offset="1" stop-color="#88c0d0" stop-opacity="0"/></radialGradient>
+<radialGradient id="haze2" cx=".05" cy="1" r=".6"><stop offset="0" stop-color="#b48ead" stop-opacity=".09"/><stop offset="1" stop-color="#b48ead" stop-opacity="0"/></radialGradient>
+<linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2b4a"/><stop offset=".7" stop-color="#b8706a"/><stop offset="1" stop-color="#d08770"/></linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".65"/></filter>
+<clipPath id="screen"><rect width="1200" height="660" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#screen)">
+<rect width="1200" height="660" fill="url(#wall)"/><rect width="1200" height="660" fill="url(#haze1)"/><rect width="1200" height="660" fill="url(#haze2)"/>
+<rect x="644" y="28" width="528" height="572" rx="12" fill="#1a1d22" stroke="#2a2e35"/>
+<rect x="668" y="58" width="180" height="9" rx="4" fill="#5e81ac99"/>
+<rect x="668" y="110" width="300" height="9" rx="4" fill="#434c5e"/>
+<rect x="668" y="136" width="340" height="9" rx="4" fill="#434c5e"/>
+<rect x="668" y="162" width="260" height="9" rx="4" fill="#434c5e"/>
+<rect x="668" y="214" width="140" height="9" rx="4" fill="#88c0d055"/>
+<rect x="692" y="240" width="280" height="9" rx="4" fill="#3b4252"/>
+<rect x="692" y="266" width="220" height="9" rx="4" fill="#3b4252"/>
+<rect x="692" y="292" width="310" height="9" rx="4" fill="#3b4252"/>
+<rect x="668" y="344" width="120" height="9" rx="4" fill="#88c0d055"/>
+<rect x="692" y="370" width="250" height="9" rx="4" fill="#3b4252"/>
+<rect x="692" y="396" width="190" height="9" rx="4" fill="#3b4252"/>
+<rect x="28" y="28" width="600" height="572" rx="12" fill="#1a1d22" stroke="#2a2e35"/>
+<path d="M28,68 v-28 a12,12 0 0 1 12,-12 h576 a12,12 0 0 1 12,12 v28 Z" fill="#1f2328"/>
+<circle cx="46" cy="48" r="5" fill="#bf616a" fill-opacity=".55"/>
+<circle cx="62" cy="48" r="5" fill="#ebcb8b" fill-opacity=".55"/>
+<circle cx="78" cy="48" r="5" fill="#a3be8c" fill-opacity=".55"/>
+<rect x="100" y="36" width="190" height="26" rx="8" fill="#262a30"/>
+<rect x="112" y="44" width="10" height="10" rx="3" fill="#a3be8c" fill-opacity=".8"/>
+<text x="130.0" y="53.5" font-size="11.5" fill="#c5c8c6">Retro</text>
+<rect x="40" y="74" width="576" height="24" rx="12" fill="#15171a"/>
+<rect x="58" y="83" width="200" height="6" rx="3" fill="#3b4252"/>
+<g class="a" style="animation-name:k0;" opacity="0">
+<rect x="52" y="200" width="330" height="220" rx="12" fill="#15171a"/>
+<circle cx="217.0" cy="302.0" r="42" fill="#d08770" fill-opacity=".85"/>
+<text x="217.0" y="312.1" font-size="26.04" fill="#1d2024" font-weight="700" text-anchor="middle">YO</text>
+<text x="66.0" y="406.0" font-size="12" fill="#c5c8c6">You</text>
+<text x="502.0" y="270.0" font-size="20" fill="#d8dee9" font-weight="700" text-anchor="middle">Ready to join?</text>
+<text x="502.0" y="296.0" font-size="12" fill="#616e88" text-anchor="middle">Avery and Sam are here</text>
+<rect x="444" y="320" width="116" height="36" rx="18" fill="#88c0d0"/>
+<text x="502.0" y="342.5" font-size="13" fill="#1d2024" font-weight="700" text-anchor="middle">Join now</text>
+<rect x="444" y="320" width="116" height="36" rx="18" fill="#fff" fill-opacity=".2" class="a" style="animation-name:k1;" opacity="0"/>
+</g>
+<g class="a" style="animation-name:k2;" opacity="1">
+<rect x="42.0" y="110.0" width="280.0" height="197.0" rx="10" fill="#15171a" stroke="#88c0d0" stroke-width="2"/>
+<circle cx="182.0" cy="202.5" r="34" fill="#5e81ac" fill-opacity=".85"/>
+<text x="182.0" y="210.7" font-size="21.08" fill="#1d2024" font-weight="700" text-anchor="middle">AV</text>
+<text x="54.0" y="295.0" font-size="12" fill="#c5c8c6">Avery</text>
+<rect x="334.0" y="110.0" width="280.0" height="197.0" rx="10" fill="#15171a" stroke="#2a2e35" stroke-width="1"/>
+<circle cx="474.0" cy="202.5" r="34" fill="#b48ead" fill-opacity=".85"/>
+<text x="474.0" y="210.7" font-size="21.08" fill="#1d2024" font-weight="700" text-anchor="middle">JO</text>
+<text x="346.0" y="295.0" font-size="12" fill="#c5c8c6">Jordan</text>
+<rect x="42.0" y="319.0" width="280.0" height="197.0" rx="10" fill="#15171a" stroke="#2a2e35" stroke-width="1"/>
+<circle cx="182.0" cy="411.5" r="34" fill="#a3be8c" fill-opacity=".85"/>
+<text x="182.0" y="419.7" font-size="21.08" fill="#1d2024" font-weight="700" text-anchor="middle">SM</text>
+<text x="54.0" y="504.0" font-size="12" fill="#c5c8c6">Sam</text>
+<rect x="334.0" y="319.0" width="280.0" height="197.0" rx="10" fill="#15171a" stroke="#2a2e35" stroke-width="1"/>
+<circle cx="474.0" cy="411.5" r="34" fill="#d08770" fill-opacity=".85"/>
+<text x="474.0" y="419.7" font-size="21.08" fill="#1d2024" font-weight="700" text-anchor="middle">YO</text>
+<text x="346.0" y="504.0" font-size="12" fill="#c5c8c6">You</text>
+<circle cx="218.0" cy="552" r="20" fill="#2e3440"/>
+<g transform="translate(218.0,552.0) scale(1.0)" fill="none" stroke="#d8dee9" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#d8dee9" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<circle cx="274.0" cy="552" r="20" fill="#2e3440"/>
+<rect x="266.0" y="546.5" width="11" height="11" rx="2" fill="#d8dee9"/><path d="M277.5,552 l5,-4 v8 z" fill="#d8dee9"/>
+<circle cx="330.0" cy="552" r="20" fill="#2e3440"/>
+<g transform="translate(330.0,552.0)" fill="none" stroke="#d8dee9" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="368.0" y="532" width="60" height="40" rx="20" fill="#bf616a"/>
+<path d="M387.0,554 q11,-9 22,0 l-1,4 l-5,-1.5 v-3 q-5,-2 -10,0 v3 l-5,1.5 z" fill="#d8dee9"/>
+<rect x="368.0" y="532" width="60" height="40" rx="20" fill="#fff" fill-opacity=".2" class="a" style="animation-name:k3;" opacity="0"/>
+</g>
+<g class="a" style="animation-name:k4;" opacity="0">
+<text x="328.0" y="310.0" font-size="20" fill="#d8dee9" font-weight="700" text-anchor="middle">You left the meeting</text>
+<rect x="278.0" y="336" width="100" height="34" rx="17" fill="none" stroke="rgba(76,86,106,.55)"/>
+<text x="328.0" y="357.5" font-size="13" fill="#88c0d0" font-weight="700" text-anchor="middle">Rejoin</text>
+<text x="328.0" y="400.0" font-size="12" fill="#616e88" text-anchor="middle">Return to home screen</text>
+</g>
+<rect x="6.0" y="620.5" width="154.4" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<rect x="11.0" y="625" width="41.2" height="24" rx="7" fill="rgba(129,161,193,.26)"/>
+<text x="18.0" y="642.0" font-size="14" fill="#d8dee9" fill-opacity=".55">1</text>
+<g transform="translate(32.6,637.0) scale(.78) translate(-32.6,-637.0)">
+<circle cx="32.6" cy="637.0" r="6" fill="none" stroke="#d8dee9" stroke-width="1.6"/><circle cx="32.6" cy="637.0" r="2.4" fill="#d8dee9"/><path d="M32.6,634.6 h5.6 M30.6,638.3 l-3,5 M34.6,638.3 l-2.6,-6.3" stroke="#d8dee9" stroke-width="1.3"/>
+</g>
+<text x="61.2" y="642.0" font-size="14" fill="#c5c8c6" fill-opacity=".55">2</text>
+<g transform="translate(75.8,637.0) scale(.78) translate(-75.8,-637.0)">
+<rect x="72.1" y="630.5" width="2.6" height="13" rx="1.3" fill="#c5c8c6"/>
+<rect x="69.3" y="633.3" width="13" height="2.6" rx="1.3" fill="#c5c8c6"/>
+<rect x="76.9" y="630.5" width="2.6" height="13" rx="1.3" fill="#c5c8c6"/>
+<rect x="69.3" y="638.1" width="13" height="2.6" rx="1.3" fill="#c5c8c6"/>
+</g>
+<text x="104.4" y="642.0" font-size="14" fill="#c5c8c6" fill-opacity=".55">3</text>
+<g transform="translate(119.0,637.0) scale(.78) translate(-119.0,-637.0)">
+<path d="M113.0,633.0 l3,-3 v14 l-3,-3 Z M125.0,641.0 l-3,3 v-14 l3,3 Z M116.0,630.0 l7,10.5 v3.5 l-1,0 l-6,-9 Z" fill="#c5c8c6"/>
+</g>
+<g transform="translate(135.8,637.0) scale(.78) translate(-135.8,-637.0)">
+<rect x="129.3" y="631.5" width="13" height="11" rx="2" fill="#c5c8c6"/><path d="M131.8,635.0 l2.4,2 l-2.4,2 M135.8,639.5 h3" fill="none" stroke="#25272b" stroke-width="1.3"/>
+</g>
+<rect x="166.4" y="620.5" width="141.6" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<circle cx="182.6" cy="637.0" r="6" fill="none" stroke="#d8dee9" stroke-width="1.6"/><circle cx="182.6" cy="637.0" r="2.4" fill="#d8dee9"/><path d="M182.6,634.6 h5.6 M180.6,638.3 l-3,5 M184.6,638.3 l-2.6,-6.3" stroke="#d8dee9" stroke-width="1.3"/>
+<text x="195.2" y="642.0" font-size="14" fill="#d8dee9">Meet - Retro</text>
+<rect x="1108.0" y="620.5" width="86.0" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<rect x="1123.3" y="630.5" width="2.6" height="13" rx="1.3" fill="#e01e5a"/>
+<rect x="1120.5" y="633.3" width="13" height="2.6" rx="1.3" fill="#e01e5a"/>
+<rect x="1128.1" y="630.5" width="2.6" height="13" rx="1.3" fill="#e01e5a"/>
+<rect x="1120.5" y="638.1" width="13" height="2.6" rx="1.3" fill="#e01e5a"/>
+<path d="M1144,641.0 q-1,-7 2.6,-10 q4.4,-1.6 8.8,0 q3.6,3 2.6,10 q-2,2 -4,2.4 l-1,-1.6 q-2,.6 -4,0 l-1,1.6 q-2,-.4 -4,-2.4 Z" fill="#7289da"/><circle cx="1148.6" cy="637.0" r="1.3" fill="#25272b"/><circle cx="1153.4" cy="637.0" r="1.3" fill="#25272b"/>
+<path d="M1171,633.5 l8,7 l-4,3.5 v-14 l4,3.5 l-8,7" fill="none" stroke="#5e81ac" stroke-width="1.6" stroke-linejoin="round"/>
+<rect x="935.2" y="620.5" width="166.8" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<g class="a" style="animation-name:k5;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:02</text>
+</g>
+<g class="a" style="animation-name:k6;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:08</text>
+</g>
+<g class="a" style="animation-name:k7;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:15</text>
+</g>
+<g class="a" style="animation-name:k8;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:21</text>
+</g>
+<g class="a" style="animation-name:k9;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:23</text>
+</g>
+<g class="a" style="animation-name:k10;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:24</text>
+</g>
+<g class="a" style="animation-name:k11;" opacity="1">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:26</text>
+</g>
+<g class="a" style="animation-name:k12;" opacity="0">
+<text x="947.2" y="642.0" font-size="14" fill="#b48ead">Thu Nov 12  14:02</text>
+</g>
+<g class="a" style="animation-name:k13;" opacity="0">
+<rect x="872.4" y="620.5" width="56.8" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<path d="M915.0,632.0 l-5,5 l5,5" fill="none" stroke="#616e88" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="a" style="animation-name:k14;" opacity="0">
+<rect x="813.6" y="620.5" width="115.6" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<path d="M915.0,632.0 l-5,5 l5,5" fill="none" stroke="#616e88" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="a" style="animation-name:k15;" opacity="1">
+<rect x="796.8" y="620.5" width="132.4" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<path d="M915.0,632.0 l-5,5 l5,5" fill="none" stroke="#616e88" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="a" style="animation-name:k16;" opacity="0">
+<rect x="838.8" y="620.5" width="90.4" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<path d="M915.0,632.0 l-5,5 l5,5" fill="none" stroke="#616e88" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g class="a" style="animation-name:k18;" opacity="0">
+<g>
+<g transform="translate(888.6,637.0) scale(1.0)" fill="none" stroke="#616e88" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#616e88" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+</g>
+</g>
+<g class="a" style="animation-name:k19;" opacity="0">
+<rect x="817.6" y="623" width="83.2" height="28" rx="7" fill="rgba(129,161,193,.18)" class="a" style="animation-name:k17;" opacity="0"/>
+<g>
+<g transform="translate(829.8,637.0) scale(1.0)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+</g>
+<text x="842.4" y="642.0" font-size="14" fill="#88c0d0">chrome</text>
+</g>
+<g class="a" style="animation-name:k20;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:00:00</text>
+</g>
+<g class="a" style="animation-name:k21;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:00:01</text>
+</g>
+<g class="a" style="animation-name:k22;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:06:40</text>
+</g>
+<g class="a" style="animation-name:k23;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:13:20</text>
+</g>
+<g class="a" style="animation-name:k24;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:19:10</text>
+</g>
+<g class="a" style="animation-name:k25;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:21:04</text>
+</g>
+<g class="a" style="animation-name:k26;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:21:05</text>
+</g>
+<g class="a" style="animation-name:k27;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:21:06</text>
+</g>
+<g class="a" style="animation-name:k28;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:22:30</text>
+</g>
+<g class="a" style="animation-name:k29;" opacity="1">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:24:12</text>
+</g>
+<g class="a" style="animation-name:k30;" opacity="0">
+<circle cx="813.0000000000001" cy="637.0" r="5.2" fill="#bf616a"/>
+<text x="825.6" y="642.0" font-size="14" fill="#bf616a">00:24:13</text>
+</g>
+<g class="a" style="animation-name:k31;" opacity="0">
+<path d="M850.5000000000001,630.5 h9 M850.5000000000001,643.5 h9 M851.5000000000001,630.5 q0,4 3.5,6.5 q3.5,-2.5 3.5,-6.5 M851.5000000000001,643.5 q0,-4 3.5,-6.5 q3.5,2.5 3.5,6.5" fill="none" stroke="#ebcb8b" stroke-width="1.5" stroke-linecap="round"/>
+<text x="867.6" y="642.0" font-size="14" fill="#ebcb8b">1/3</text>
+</g>
+<g class="a" style="animation-name:k32;" opacity="0">
+<path d="M850.5000000000001,630.5 h9 M850.5000000000001,643.5 h9 M851.5000000000001,630.5 q0,4 3.5,6.5 q3.5,-2.5 3.5,-6.5 M851.5000000000001,643.5 q0,-4 3.5,-6.5 q3.5,2.5 3.5,6.5" fill="none" stroke="#ebcb8b" stroke-width="1.5" stroke-linecap="round"/>
+<text x="867.6" y="642.0" font-size="14" fill="#ebcb8b">2/3</text>
+</g>
+<g class="a" style="animation-name:k33;" opacity="0">
+<path d="M850.5000000000001,630.5 h9 M850.5000000000001,643.5 h9 M851.5000000000001,630.5 q0,4 3.5,6.5 q3.5,-2.5 3.5,-6.5 M851.5000000000001,643.5 q0,-4 3.5,-6.5 q3.5,2.5 3.5,6.5" fill="none" stroke="#ebcb8b" stroke-width="1.5" stroke-linecap="round"/>
+<text x="867.6" y="642.0" font-size="14" fill="#ebcb8b">3/3</text>
+</g>
+<g class="a" style="animation-name:k34;" opacity="0">
+<g>
+<g transform="translate(829.8,637.0) scale(1.0)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+</g>
+<text x="842.4" y="642.0" font-size="14" fill="#88c0d0">chrome</text>
+</g>
+<g class="a" style="animation-name:k35;" opacity="0">
+<g>
+<g transform="translate(888.6,637.0) scale(1.0)" fill="none" stroke="#616e88" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#616e88" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+</g>
+</g>
+<g class="a" style="animation-name:k36;" transform="translate(-75.6,0)">
+<rect x="750.8" y="620.5" width="115.6" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<path d="M762.0000000000001,634.5 h3 l4,-4 v13 l-4,-4 h-3 Z" fill="#88c0d0"/><path d="M770.0000000000001,634.0 q2.5,3 0,6" fill="none" stroke="#88c0d0" stroke-width="1.4" stroke-linecap="round"/>
+<text x="779.6" y="642.0" font-size="14" fill="#88c0d0">35%</text>
+<rect x="812.1000000000001" y="630.0" width="9" height="14" rx="4.5" fill="#616e88"/><path d="M816.6000000000001,630.0 v5 M812.1000000000001,635.0 h9" stroke="#25272b" stroke-width="1.2"/>
+<text x="829.2" y="642.0" font-size="14" fill="#616e88">80%</text>
+<rect x="614.8" y="620.5" width="130.0" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<circle cx="631.0" cy="637.0" r="6" fill="#a3be8c"/>
+<path d="M649.4000000000001,634.0 h3 a2,2 0 0 1 4,0 h3 v3 a2,2 0 0 1 0,4 v3 h-3 a2,2 0 0 0 -4,0 h-3 v-3 a2,2 0 0 0 0,-4 Z" fill="#88c0d0" transform="translate(-1,0)"/>
+<circle cx="679.8" cy="637.0" r="5.5" fill="none" stroke="#616e88" stroke-width="1.6"/>
+<g fill="none" stroke="#616e88" stroke-width="1.4"><rect x="698.2" y="630.0" width="6" height="4.5" rx="1"/><rect x="704.7" y="639.0" width="6" height="4.5" rx="1"/><path d="M701.2,634.5 v6.8 h3.5 M698.2,638.0 l2.4,2.4 m0,-2.4 l-2.4,2.4"/></g>
+<g class="a" style="animation-name:k37;" opacity="0">
+<path d="M723.1,640.5 v-4.5 q0,-5.5 5.5,-5.5 q5.5,0 5.5,5.5 v4.5 l1.5,1.5 h-14 Z" fill="#616e88"/><circle cx="728.6" cy="644.0" r="1.8" fill="#616e88"/>
+</g>
+<g class="a" style="animation-name:k38;" opacity="1">
+<path d="M723.1,640.5 v-4.5 q0,-5.5 5.5,-5.5 q5.5,0 5.5,5.5 v4.5 l1.5,1.5 h-14 Z" fill="#ebcb8b"/><circle cx="728.6" cy="644.0" r="1.8" fill="#ebcb8b"/>
+<line x1="721.1" y1="629.5" x2="736.1" y2="644.5" stroke="#25272b" stroke-width="3.6"/><line x1="721.1" y1="629.5" x2="736.1" y2="644.5" stroke="#ebcb8b" stroke-width="1.7" stroke-linecap="round"/>
+</g>
+<g class="a" style="animation-name:k39;" opacity="0">
+<rect x="409.6" y="620.5" width="199.2" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<rect x="419.6" y="628.0" width="18" height="18" rx="3" fill="url(#dusk)"/><circle cx="430.6" cy="635.0" r="3" fill="#ebcb8b"/><path d="M419.6,642.0 q5,-3 9,0 t9,0 v4 h-18 Z" fill="#2e2235"/>
+<text x="445.6" y="642.0" font-size="14" fill="#ebcb8b">Marlow Fen · Tides</text>
+</g>
+<g class="a" style="animation-name:k40;" opacity="1">
+<rect x="576.4" y="620.5" width="32.4" height="33" rx="10" fill="rgba(40,42,46,.84)" stroke="rgba(76,86,106,.55)"/>
+<g transform="translate(592.6,637.0) scale(.9)" fill="#616e88"><ellipse cx="-4.2" cy="5" rx="2.9" ry="2.3"/><ellipse cx="4.6" cy="3.2" rx="2.9" ry="2.3"/><rect x="-1.9" y="-6.5" width="1.6" height="11.5"/><rect x="6.9" y="-8.3" width="1.6" height="11.5"/><path d="M-1.9,-6.5 L8.5,-8.3 L8.5,-5.6 L-1.9,-3.8 Z"/></g>
+</g>
+</g>
+<g class="a" style="animation-name:k41,k42;transform-origin:859.2px 637.0px">
+<g class="a" style="animation-name:k43;" opacity="0">
+<g transform="translate(639.2,138.0)">
+<rect x=".5" y=".5" width="439" height="473" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#88c0d0"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">2 recordings today · ~/Audio</text>
+<rect x="342.0" y="20" width="84.0" height="20" rx="10" fill="#88c0d0" fill-opacity=".15"/>
+<text x="384.0" y="34.0" font-size="11" fill="#88c0d0" font-weight="700" text-anchor="middle">mic in use</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="92.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">IN USE</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MIC</text>
+<text x="24.0" y="140.0" font-size="13" fill="#c5c8c6">Logbook is not recording.</text>
+<rect x="24.0" y="151.0" width="145.0" height="30" rx="9" fill="#88c0d0" stroke="#88c0d0"/>
+<g transform="translate(42.0,166.0)" fill="#1a1b1e"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<text x="53.0" y="170.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Record meeting</text>
+<rect x="177.0" y="151.0" width="137.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(195.0,166.0)" fill="none" stroke="#c5c8c6" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<text x="206.0" y="170.5" font-size="12.5" fill="#c5c8c6">Record screen</text>
+<rect x="322.5" y="151.0" width="92.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(340.5,166.0) scale(1.0)" fill="none" stroke="#c5c8c6" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#c5c8c6" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="351.5" y="170.5" font-size="12.5" fill="#c5c8c6">Dictate</text>
+<rect x="14" y="200.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,238.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="242.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="242.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<text x="426.0" y="276.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">18 IN ALL</text>
+<text x="14.0" y="276.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,307.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="294.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,303.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,312.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="294.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,307.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="311.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="305.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="321.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,358.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="345.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,354.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,363.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="345.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,354.0 V363.0 L334.4,358.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="362.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="356.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="372.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<g transform="translate(31.0,409.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="396.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,405.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,414.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="396.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,409.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="413.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="407.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · yesterday 14:30</text>
+<text x="49.0" y="423.0" font-size="11" fill="#7e8182">31 min · 2 marks · transcript ready</text>
+<text x="14.0" y="457.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k44;" opacity="0">
+<g transform="translate(639.2,123.0)">
+<rect x=".5" y=".5" width="439" height="488" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#bf616a"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">2 recordings today · ~/Audio</text>
+<rect x="368.4" y="20" width="57.6" height="20" rx="10" fill="#bf616a" fill-opacity=".15"/>
+<text x="397.2" y="34.0" font-size="11" fill="#bf616a" font-weight="700" text-anchor="middle">on air</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="107.0" rx="10" fill="#bf616a" fill-opacity=".07" stroke="#bf616a" stroke-opacity=".35"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">DND ON</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MEETING · CHUNK 1 · DEFAULT INPUT</text>
+<g class="a" style="animation-name:k45;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:00</text>
+</g>
+<g class="a" style="animation-name:k46;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:01</text>
+</g>
+<g class="a" style="animation-name:k47;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:06:40</text>
+</g>
+<g class="a" style="animation-name:k48;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:13:20</text>
+</g>
+<g class="a" style="animation-name:k49;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:19:10</text>
+</g>
+<g class="a" style="animation-name:k50;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:04</text>
+</g>
+<g class="a" style="animation-name:k51;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:05</text>
+</g>
+<g class="a" style="animation-name:k52;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:06</text>
+</g>
+<g class="a" style="animation-name:k53;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:22:30</text>
+</g>
+<g class="a" style="animation-name:k54;" opacity="1">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:12</text>
+</g>
+<g class="a" style="animation-name:k55;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:13</text>
+</g>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.00s" x="309.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.13s" x="315.2" y="135.1" width="3.6" height="15.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.26s" x="321.2" y="132.3" width="3.6" height="21.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-0.39s" x="327.2" y="136.3" width="3.6" height="13.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-0.52s" x="333.2" y="130.6" width="3.6" height="24.9" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.65s" x="339.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.78s" x="345.2" y="137.4" width="3.6" height="11.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.91s" x="351.2" y="133.4" width="3.6" height="19.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.04s" x="357.2" y="130.0" width="3.6" height="26.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.17s" x="363.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.30s" x="369.2" y="136.9" width="3.6" height="12.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-1.43s" x="375.2" y="131.7" width="3.6" height="22.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-1.56s" x="381.2" y="134.0" width="3.6" height="18.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.69s" x="387.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.82s" x="393.2" y="132.9" width="3.6" height="20.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.95s" x="399.2" y="131.1" width="3.6" height="23.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-2.08s" x="405.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-2.21s" x="411.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<rect x="24.0" y="166.0" width="70.0" height="30" rx="9" fill="#bf616a" stroke="#bf616a"/>
+<rect x="38.0" y="177.0" width="8" height="8" rx="1" fill="#1a1b1e"/>
+<text x="53.0" y="185.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Stop</text>
+<rect x="102.0" y="166.0" width="70.0" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M116.0,187.0 V175.0 H124.5 l-1.6,2.6 l1.6,2.6 H116.0" fill="#c5c8c6" stroke="#c5c8c6" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="131.0" y="185.5" font-size="12.5" fill="#c5c8c6">Mark</text>
+<rect x="14" y="215.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="234.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="234.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,253.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="257.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="257.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<text x="426.0" y="291.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">18 IN ALL</text>
+<text x="14.0" y="291.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,322.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="309.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,318.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,327.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="309.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,322.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="326.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="320.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="336.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,373.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="360.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,369.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,378.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="360.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,369.0 V378.0 L334.4,373.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="377.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="371.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="387.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<g transform="translate(31.0,424.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="411.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,420.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,429.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="411.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,424.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="428.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="422.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · yesterday 14:30</text>
+<text x="49.0" y="438.0" font-size="11" fill="#7e8182">31 min · 2 marks · transcript ready</text>
+<text x="14.0" y="472.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k56;" opacity="0">
+<g transform="translate(639.2,123.0)">
+<rect x=".5" y=".5" width="439" height="488" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#bf616a"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">2 recordings today · ~/Audio</text>
+<rect x="368.4" y="20" width="57.6" height="20" rx="10" fill="#bf616a" fill-opacity=".15"/>
+<text x="397.2" y="34.0" font-size="11" fill="#bf616a" font-weight="700" text-anchor="middle">on air</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="107.0" rx="10" fill="#bf616a" fill-opacity=".07" stroke="#bf616a" stroke-opacity=".35"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">DND ON</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MEETING · CHUNK 2 · DEFAULT INPUT</text>
+<g class="a" style="animation-name:k57;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:00</text>
+</g>
+<g class="a" style="animation-name:k58;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:01</text>
+</g>
+<g class="a" style="animation-name:k59;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:06:40</text>
+</g>
+<g class="a" style="animation-name:k60;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:13:20</text>
+</g>
+<g class="a" style="animation-name:k61;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:19:10</text>
+</g>
+<g class="a" style="animation-name:k62;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:04</text>
+</g>
+<g class="a" style="animation-name:k63;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:05</text>
+</g>
+<g class="a" style="animation-name:k64;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:06</text>
+</g>
+<g class="a" style="animation-name:k65;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:22:30</text>
+</g>
+<g class="a" style="animation-name:k66;" opacity="1">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:12</text>
+</g>
+<g class="a" style="animation-name:k67;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:13</text>
+</g>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.00s" x="309.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.13s" x="315.2" y="135.1" width="3.6" height="15.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.26s" x="321.2" y="132.3" width="3.6" height="21.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-0.39s" x="327.2" y="136.3" width="3.6" height="13.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-0.52s" x="333.2" y="130.6" width="3.6" height="24.9" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.65s" x="339.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.78s" x="345.2" y="137.4" width="3.6" height="11.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.91s" x="351.2" y="133.4" width="3.6" height="19.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.04s" x="357.2" y="130.0" width="3.6" height="26.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.17s" x="363.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.30s" x="369.2" y="136.9" width="3.6" height="12.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-1.43s" x="375.2" y="131.7" width="3.6" height="22.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-1.56s" x="381.2" y="134.0" width="3.6" height="18.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.69s" x="387.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.82s" x="393.2" y="132.9" width="3.6" height="20.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.95s" x="399.2" y="131.1" width="3.6" height="23.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-2.08s" x="405.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-2.21s" x="411.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<rect x="24.0" y="166.0" width="70.0" height="30" rx="9" fill="#bf616a" stroke="#bf616a"/>
+<rect x="38.0" y="177.0" width="8" height="8" rx="1" fill="#1a1b1e"/>
+<text x="53.0" y="185.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Stop</text>
+<rect x="102.0" y="166.0" width="70.0" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M116.0,187.0 V175.0 H124.5 l-1.6,2.6 l1.6,2.6 H116.0" fill="#c5c8c6" stroke="#c5c8c6" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="131.0" y="185.5" font-size="12.5" fill="#c5c8c6">Mark</text>
+<rect x="14" y="215.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="234.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="234.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,253.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="257.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="257.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<text x="426.0" y="291.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">18 IN ALL</text>
+<text x="14.0" y="291.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,322.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="309.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,318.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,327.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="309.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,322.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="326.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="320.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="336.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,373.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="360.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,369.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,378.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="360.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,369.0 V378.0 L334.4,373.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="377.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="371.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="387.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<g transform="translate(31.0,424.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="411.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,420.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,429.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="411.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,424.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="428.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="422.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · yesterday 14:30</text>
+<text x="49.0" y="438.0" font-size="11" fill="#7e8182">31 min · 2 marks · transcript ready</text>
+<text x="14.0" y="472.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k68;" opacity="1">
+<g transform="translate(639.2,99.0)">
+<rect x=".5" y=".5" width="439" height="512" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#bf616a"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">2 recordings today · ~/Audio</text>
+<rect x="368.4" y="20" width="57.6" height="20" rx="10" fill="#bf616a" fill-opacity=".15"/>
+<text x="397.2" y="34.0" font-size="11" fill="#bf616a" font-weight="700" text-anchor="middle">on air</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="131.0" rx="10" fill="#bf616a" fill-opacity=".07" stroke="#bf616a" stroke-opacity=".35"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">DND ON</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MEETING · CHUNK 2 · DEFAULT INPUT</text>
+<g class="a" style="animation-name:k69;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:00</text>
+</g>
+<g class="a" style="animation-name:k70;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:00:01</text>
+</g>
+<g class="a" style="animation-name:k71;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:06:40</text>
+</g>
+<g class="a" style="animation-name:k72;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:13:20</text>
+</g>
+<g class="a" style="animation-name:k73;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:19:10</text>
+</g>
+<g class="a" style="animation-name:k74;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:04</text>
+</g>
+<g class="a" style="animation-name:k75;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:05</text>
+</g>
+<g class="a" style="animation-name:k76;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:21:06</text>
+</g>
+<g class="a" style="animation-name:k77;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:22:30</text>
+</g>
+<g class="a" style="animation-name:k78;" opacity="1">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:12</text>
+</g>
+<g class="a" style="animation-name:k79;" opacity="0">
+<text x="24.0" y="153.0" font-size="26" fill="#bf616a" font-weight="700">00:24:13</text>
+</g>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.00s" x="309.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.13s" x="315.2" y="135.1" width="3.6" height="15.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.26s" x="321.2" y="132.3" width="3.6" height="21.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-0.39s" x="327.2" y="136.3" width="3.6" height="13.4" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-0.52s" x="333.2" y="130.6" width="3.6" height="24.9" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-0.65s" x="339.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-0.78s" x="345.2" y="137.4" width="3.6" height="11.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-0.91s" x="351.2" y="133.4" width="3.6" height="19.1" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.04s" x="357.2" y="130.0" width="3.6" height="26.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.17s" x="363.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.30s" x="369.2" y="136.9" width="3.6" height="12.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-1.43s" x="375.2" y="131.7" width="3.6" height="22.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-1.56s" x="381.2" y="134.0" width="3.6" height="18.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.38s;animation-delay:-1.69s" x="387.2" y="138.0" width="3.6" height="10.0" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.52s;animation-delay:-1.82s" x="393.2" y="132.9" width="3.6" height="20.3" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.31s;animation-delay:-1.95s" x="399.2" y="131.1" width="3.6" height="23.7" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.45s;animation-delay:-2.08s" x="405.2" y="135.7" width="3.6" height="14.6" rx="1.8" fill="#bf616a"/>
+<rect class="lbm" style="animation-duration:0.59s;animation-delay:-2.21s" x="411.2" y="134.6" width="3.6" height="16.8" rx="1.8" fill="#bf616a"/>
+<text x="24.0" y="179.0" font-size="13" fill="#7e8182">1 mark · last at 00:21:05</text>
+<rect x="24.0" y="190.0" width="70.0" height="30" rx="9" fill="#bf616a" stroke="#bf616a"/>
+<rect x="38.0" y="201.0" width="8" height="8" rx="1" fill="#1a1b1e"/>
+<text x="53.0" y="209.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Stop</text>
+<rect x="102.0" y="190.0" width="70.0" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M116.0,211.0 V199.0 H124.5 l-1.6,2.6 l1.6,2.6 H116.0" fill="#c5c8c6" stroke="#c5c8c6" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="131.0" y="209.5" font-size="12.5" fill="#c5c8c6">Mark</text>
+<rect x="14" y="239.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="258.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="258.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,277.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="281.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="281.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<text x="426.0" y="315.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">18 IN ALL</text>
+<text x="14.0" y="315.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,346.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="333.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,342.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,351.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="333.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,346.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="350.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="344.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="360.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,397.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="384.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,393.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,402.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="384.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,393.0 V402.0 L334.4,397.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="401.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="395.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="411.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<g transform="translate(31.0,448.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="435.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,444.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,453.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="435.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,448.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="452.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="446.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · yesterday 14:30</text>
+<text x="49.0" y="462.0" font-size="11" fill="#7e8182">31 min · 2 marks · transcript ready</text>
+<text x="14.0" y="496.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k80;" opacity="0">
+<g transform="translate(639.2,61.0)">
+<rect x=".5" y=".5" width="439" height="550" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#ebcb8b"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">3 recordings today · ~/Audio</text>
+<rect x="328.8" y="20" width="97.2" height="20" rx="10" fill="#ebcb8b" fill-opacity=".15"/>
+<text x="377.4" y="34.0" font-size="11" fill="#ebcb8b" font-weight="700" text-anchor="middle">transcribing</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="92.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">IN USE</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MIC</text>
+<text x="24.0" y="140.0" font-size="13" fill="#c5c8c6">Logbook is not recording.</text>
+<rect x="24.0" y="151.0" width="145.0" height="30" rx="9" fill="#88c0d0" stroke="#88c0d0"/>
+<g transform="translate(42.0,166.0)" fill="#1a1b1e"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<text x="53.0" y="170.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Record meeting</text>
+<rect x="177.0" y="151.0" width="137.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(195.0,166.0)" fill="none" stroke="#c5c8c6" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<text x="206.0" y="170.5" font-size="12.5" fill="#c5c8c6">Record screen</text>
+<rect x="322.5" y="151.0" width="92.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(340.5,166.0) scale(1.0)" fill="none" stroke="#c5c8c6" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#c5c8c6" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="351.5" y="170.5" font-size="12.5" fill="#c5c8c6">Dictate</text>
+<rect x="14" y="200.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,238.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="242.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="242.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<rect x="14" y="266.0" width="412" height="67.0" rx="10" fill="#ebcb8b" fill-opacity=".06" stroke="#ebcb8b" stroke-opacity=".3"/>
+<text x="416.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">SWITCHYARD</text>
+<text x="24.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">TRANSCRIBING · MEETING TODAY 14:02</text>
+<text x="24.0" y="308.0" font-size="13" fill="#c5c8c6">Piece 1 of 3</text>
+<text x="416.0" y="308.0" font-size="13" fill="#ebcb8b" text-anchor="end">~1 min left</text>
+<rect x="24" y="319" width="392" height="5" rx="2.5" fill="#3b3d40"/>
+<rect x="24" y="319" width="15.7" height="5" rx="2.5" fill="#ebcb8b"/>
+<text x="426.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">19 IN ALL</text>
+<text x="14.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,384.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="371.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,380.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,389.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<text x="49.0" y="382.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 14:02</text>
+<text x="49.0" y="398.0" font-size="11" fill="#7e8182">24 min · 1 mark · transcribing</text>
+<g transform="translate(31.0,435.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="422.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,431.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,440.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="422.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,435.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="439.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="433.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="449.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,486.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="473.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,482.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,491.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="473.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,482.0 V491.0 L334.4,486.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="490.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="484.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="500.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<text x="14.0" y="534.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k81;" opacity="0">
+<g transform="translate(639.2,61.0)">
+<rect x=".5" y=".5" width="439" height="550" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#ebcb8b"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">3 recordings today · ~/Audio</text>
+<rect x="328.8" y="20" width="97.2" height="20" rx="10" fill="#ebcb8b" fill-opacity=".15"/>
+<text x="377.4" y="34.0" font-size="11" fill="#ebcb8b" font-weight="700" text-anchor="middle">transcribing</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="92.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">IN USE</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MIC</text>
+<text x="24.0" y="140.0" font-size="13" fill="#c5c8c6">Logbook is not recording.</text>
+<rect x="24.0" y="151.0" width="145.0" height="30" rx="9" fill="#88c0d0" stroke="#88c0d0"/>
+<g transform="translate(42.0,166.0)" fill="#1a1b1e"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<text x="53.0" y="170.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Record meeting</text>
+<rect x="177.0" y="151.0" width="137.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(195.0,166.0)" fill="none" stroke="#c5c8c6" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<text x="206.0" y="170.5" font-size="12.5" fill="#c5c8c6">Record screen</text>
+<rect x="322.5" y="151.0" width="92.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(340.5,166.0) scale(1.0)" fill="none" stroke="#c5c8c6" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#c5c8c6" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="351.5" y="170.5" font-size="12.5" fill="#c5c8c6">Dictate</text>
+<rect x="14" y="200.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,238.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="242.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="242.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<rect x="14" y="266.0" width="412" height="67.0" rx="10" fill="#ebcb8b" fill-opacity=".06" stroke="#ebcb8b" stroke-opacity=".3"/>
+<text x="416.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">SWITCHYARD</text>
+<text x="24.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">TRANSCRIBING · MEETING TODAY 14:02</text>
+<text x="24.0" y="308.0" font-size="13" fill="#c5c8c6">Piece 2 of 3</text>
+<text x="416.0" y="308.0" font-size="13" fill="#ebcb8b" text-anchor="end">~1 min left</text>
+<rect x="24" y="319" width="392" height="5" rx="2.5" fill="#3b3d40"/>
+<rect x="24" y="319" width="243.0" height="5" rx="2.5" fill="#ebcb8b"/>
+<text x="426.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">19 IN ALL</text>
+<text x="14.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,384.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="371.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,380.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,389.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<text x="49.0" y="382.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 14:02</text>
+<text x="49.0" y="398.0" font-size="11" fill="#7e8182">24 min · 1 mark · transcribing</text>
+<g transform="translate(31.0,435.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="422.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,431.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,440.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="422.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,435.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="439.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="433.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="449.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,486.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="473.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,482.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,491.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="473.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,482.0 V491.0 L334.4,486.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="490.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="484.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="500.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<text x="14.0" y="534.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k82;" opacity="0">
+<g transform="translate(639.2,61.0)">
+<rect x=".5" y=".5" width="439" height="550" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#ebcb8b"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">3 recordings today · ~/Audio</text>
+<rect x="328.8" y="20" width="97.2" height="20" rx="10" fill="#ebcb8b" fill-opacity=".15"/>
+<text x="377.4" y="34.0" font-size="11" fill="#ebcb8b" font-weight="700" text-anchor="middle">transcribing</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="92.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">IN USE</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MIC</text>
+<text x="24.0" y="140.0" font-size="13" fill="#c5c8c6">Logbook is not recording.</text>
+<rect x="24.0" y="151.0" width="145.0" height="30" rx="9" fill="#88c0d0" stroke="#88c0d0"/>
+<g transform="translate(42.0,166.0)" fill="#1a1b1e"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<text x="53.0" y="170.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Record meeting</text>
+<rect x="177.0" y="151.0" width="137.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(195.0,166.0)" fill="none" stroke="#c5c8c6" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<text x="206.0" y="170.5" font-size="12.5" fill="#c5c8c6">Record screen</text>
+<rect x="322.5" y="151.0" width="92.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(340.5,166.0) scale(1.0)" fill="none" stroke="#c5c8c6" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#c5c8c6" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="351.5" y="170.5" font-size="12.5" fill="#c5c8c6">Dictate</text>
+<rect x="14" y="200.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,238.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="242.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="242.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<rect x="14" y="266.0" width="412" height="67.0" rx="10" fill="#ebcb8b" fill-opacity=".06" stroke="#ebcb8b" stroke-opacity=".3"/>
+<text x="416.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">SWITCHYARD</text>
+<text x="24.0" y="285.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">TRANSCRIBING · MEETING TODAY 14:02</text>
+<text x="24.0" y="308.0" font-size="13" fill="#c5c8c6">Piece 3 of 3</text>
+<text x="416.0" y="308.0" font-size="13" fill="#ebcb8b" text-anchor="end">under a minute left</text>
+<rect x="24" y="319" width="392" height="5" rx="2.5" fill="#3b3d40"/>
+<rect x="24" y="319" width="341.0" height="5" rx="2.5" fill="#ebcb8b"/>
+<text x="426.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">19 IN ALL</text>
+<text x="14.0" y="353.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,384.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="371.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,380.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,389.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<text x="49.0" y="382.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 14:02</text>
+<text x="49.0" y="398.0" font-size="11" fill="#7e8182">24 min · 1 mark · transcribing</text>
+<g transform="translate(31.0,435.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="422.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,431.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,440.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="422.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,435.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="439.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="433.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="449.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,486.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="473.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,482.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,491.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="473.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,482.0 V491.0 L334.4,486.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="490.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="484.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="500.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<text x="14.0" y="534.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+<g class="a" style="animation-name:k83;" opacity="0">
+<g transform="translate(639.2,138.0)">
+<rect x=".5" y=".5" width="439" height="473" rx="16" fill="#282a2e" fill-opacity=".97" stroke="#41464e" filter="url(#shadow)"/>
+<circle cx="19" cy="30" r="4.5" fill="#88c0d0"/>
+<text x="34.0" y="28.0" font-size="12" fill="#c5c8c6" font-weight="700" letter-spacing="2">LOGBOOK</text>
+<text x="34.0" y="44.0" font-size="11" fill="#7e8182">3 recordings today · ~/Audio</text>
+<rect x="342.0" y="20" width="84.0" height="20" rx="10" fill="#88c0d0" fill-opacity=".15"/>
+<text x="384.0" y="34.0" font-size="11" fill="#88c0d0" font-weight="700" text-anchor="middle">mic in use</text>
+<rect x="14.0" y="58" width="45.6" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M15.0,77 v5 a3,3 0 0 0 3,3 h37.6 a3,3 0 0 0 3,-3 v-5" fill="none" stroke="#88c0d0" stroke-width="2"/>
+<text x="36.8" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Now</text>
+<rect x="63.6" y="58" width="96.0" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="111.6" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Recordings</text>
+<rect x="163.6" y="58" width="103.2" height="28" rx="9" fill="#303236" stroke="#3b3d40"/>
+<text x="215.2" y="76.5" font-size="12" fill="#c5c8c6" text-anchor="middle">Transcripts</text>
+<rect x="14" y="98.0" width="412" height="92.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">IN USE</text>
+<text x="24.0" y="117.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">MIC</text>
+<text x="24.0" y="140.0" font-size="13" fill="#c5c8c6">Logbook is not recording.</text>
+<rect x="24.0" y="151.0" width="145.0" height="30" rx="9" fill="#88c0d0" stroke="#88c0d0"/>
+<g transform="translate(42.0,166.0)" fill="#1a1b1e"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<text x="53.0" y="170.5" font-size="12.5" fill="#1a1b1e" font-weight="700">Record meeting</text>
+<rect x="177.0" y="151.0" width="137.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(195.0,166.0)" fill="none" stroke="#c5c8c6" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<text x="206.0" y="170.5" font-size="12.5" fill="#c5c8c6">Record screen</text>
+<rect x="322.5" y="151.0" width="92.5" height="30" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(340.5,166.0) scale(1.0)" fill="none" stroke="#c5c8c6" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#c5c8c6" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="351.5" y="170.5" font-size="12.5" fill="#c5c8c6">Dictate</text>
+<rect x="14" y="200.0" width="412" height="56.0" rx="10" fill="#303236" stroke="#3b3d40"/>
+<text x="416.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">CHROME</text>
+<text x="24.0" y="219.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">ALSO USING THE MIC</text>
+<g transform="translate(31.0,238.0) scale(0.85)" fill="none" stroke="#88c0d0" stroke-width="1.7" stroke-linecap="round"><rect x="-2.8" y="-7" width="5.6" height="9.5" rx="2.8" fill="#88c0d0" stroke="none"/><path d="M-5.2,-0.8 a5.2,5.2 0 0 0 10.4,0 M0,4.4 v3"/></g>
+<text x="416.0" y="242.0" font-size="13" fill="#7e8182" text-anchor="end">Shure MV7</text>
+<text x="46.0" y="242.0" font-size="13" fill="#c5c8c6">chrome (Google Chrome)</text>
+<text x="426.0" y="276.0" font-size="10" fill="#7e8182" font-weight="700" text-anchor="end" letter-spacing="1">19 IN ALL</text>
+<text x="14.0" y="276.0" font-size="10" fill="#7e8182" font-weight="700" letter-spacing="1">RECENT</text>
+<g transform="translate(31.0,307.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="294.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,303.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,312.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="294.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,307.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="311.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="305.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 14:02</text>
+<text x="49.0" y="321.0" font-size="11" fill="#7e8182">24 min · 1 mark · transcript ready</text>
+<g transform="translate(31.0,358.5)" fill="#88c0d0"><circle cx="0" cy="-3" r="2.7"/><path d="M-4.4,5 a4.4,4.2 0 0 1 8.8,0 Z"/><circle cx="-5.6" cy="-1.6" r="2"/><path d="M-9,5 a3.4,3.4 0 0 1 4.2,-3.3 a5.6,5.6 0 0 0 -0.6,3.3 Z"/><circle cx="5.6" cy="-1.6" r="2"/><path d="M9,5 a3.4,3.4 0 0 0 -4.2,-3.3 a5.6,5.6 0 0 1 0.6,3.3 Z"/></g>
+<rect x="387.0" y="345.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,354.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,363.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="345.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<g transform="translate(330.4,358.5)" fill="none" stroke="#c5c8c6" stroke-width="1.4"><rect x="-2" y="-3.6" width="7" height="9" rx="1.3"/><path d="M-4.6,3 v-7.3 a1.3,1.3 0 0 1 1.3,-1.3 h5.6"/></g>
+<text x="341.4" y="362.6" font-size="11.5" fill="#c5c8c6">Copy</text>
+<text x="49.0" y="356.0" font-size="13" fill="#c5c8c6" font-weight="700">Meeting · today 10:02</text>
+<text x="49.0" y="372.0" font-size="11" fill="#7e8182">30 min · transcript ready</text>
+<g transform="translate(31.0,409.5)" fill="none" stroke="#88c0d0" stroke-width="1.6" stroke-linejoin="round"><rect x="-6.5" y="-5.5" width="13" height="9" rx="1.2"/><path d="M-3,6.5 h6 M0,3.5 v3"/></g>
+<rect x="387.0" y="396.5" width="30.0" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M395.5,405.0 h4.4 l1.6,1.8 h6.4 a1,1 0 0 1 1,1 v1 h-10.4 l-3,6.4 Z M395.9,414.7 l2.6,-6.2 h11.2 l-2.6,6.2 Z" fill="#c5c8c6"/>
+<rect x="313.4" y="396.5" width="65.6" height="26" rx="9" fill="#303236" stroke="#3b3d40"/>
+<path d="M327.4,405.0 V414.0 L334.4,409.5 Z" fill="#c5c8c6"/>
+<text x="341.4" y="413.6" font-size="11.5" fill="#c5c8c6">Open</text>
+<text x="49.0" y="407.0" font-size="13" fill="#c5c8c6" font-weight="700">Screen · today 09:15</text>
+<text x="49.0" y="423.0" font-size="11" fill="#7e8182">2:14 · recording-20261112-091532.mp4</text>
+<text x="14.0" y="457.0" font-size="10.5" fill="#7e8182">1-3 tabs · r record meeting · m mark · s screen · Esc close</text>
+</g></g>
+</g>
+<circle class="a ripple" style="animation-name:k84,k85;transform-box:fill-box;transform-origin:center" cx="502.0" cy="338.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k86,k87;transform-box:fill-box;transform-origin:center" cx="859.2" cy="637.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k88,k89;transform-box:fill-box;transform-origin:center" cx="735.7" cy="304.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k90,k91;transform-box:fill-box;transform-origin:center" cx="776.2" cy="304.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k92,k93;transform-box:fill-box;transform-origin:center" cx="698.2" cy="304.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k94,k95;transform-box:fill-box;transform-origin:center" cx="985.4" cy="445.5" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k96,k97;transform-box:fill-box;transform-origin:center" cx="470.0" cy="150.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<circle class="a ripple" style="animation-name:k98,k99;transform-box:fill-box;transform-origin:center" cx="398.0" cy="552.0" r="18" fill="none" stroke="#88c0d0" stroke-width="2.5" opacity="0"/>
+<g id="cursor" class="a" style="animation-name:k100;animation-timing-function:cubic-bezier(.45,0,.25,1);transform:translate(357.0px, 296.0px)">
+<path d="M0,0 L0,22 L6,17 L10,26 L14,24 L10,15 L18,15 Z" fill="#eceff4" stroke="#1d2024" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+</g></svg>
