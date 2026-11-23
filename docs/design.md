@@ -3,7 +3,8 @@
 Logbook is one lamp in waybar for everything that listens to the mic: meeting
 recordings, screen captures, voxtype dictation, and any other app with a
 capture stream open. Behind the lamp sits a drawer with the live recording,
-the recordings on disk and their transcripts.
+the recordings on disk and their transcripts, and voxtype's history of your
+dictation.
 
 It replaces three scripts and three bar icons from my dot-files:
 `meeting-record.sh`, `screen-record.sh` and `voxtype-status.sh`.
@@ -227,6 +228,18 @@ the newest `entries`: `id`, `started`, `length`, `text` (the user's
 correction, else what was typed, else what the engine heard, as `voxtype
 history copy` picks), `corrected`, `app`, `outcome` and `error`.
 
+The Dictations tab:
+
+| What | Runs |
+|---|---|
+| Copy | `voxtype history copy <id>` |
+| Type it again | closes the drawer, then `voxtype history paste <id> --delay-ms 350` |
+| Turn on, Pause, Resume | `voxtype history enable`, `pause`, `resume`, then `rescan` |
+| Search and correct | closes the drawer, then `voxtype history view` |
+
+Turn on, Pause and Resume write voxtype's config, not the day files, so the
+drawer asks for a `rescan` when the command ends.
+
 ## The bar
 
 `logbook bar` subscribes and prints one JSON line per change:
@@ -339,7 +352,7 @@ ignore = []           # binaries or app names
 width = 440
 max_height = 0.8
 gap = 8
-recent = 30
+recent = 30           # recordings and dictations listed
 
 [theme]
 from = "waybar"
@@ -351,7 +364,7 @@ from = "waybar"
 
 | Key | Action |
 |---|---|
-| 1, 2, 3, Tab | Now, Recordings, Transcripts |
+| 1, 2, 3, 4, Tab | Now, Recordings, Transcripts, Dictations |
 | r | start or stop a meeting |
 | m | mark |
 | s | start (via slurp) or stop a screen capture |

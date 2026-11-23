@@ -390,7 +390,7 @@ def _draw(pen, s, clock=None):
         pen.text(DRAWER_W - P - cw / 2, 34, chip, 11, LB[color], 700, "middle")
     # ---- tabs: Now is checked (an accent line along its foot)
     x, y = P, 58
-    for i, name in enumerate(["Now", "Recordings", "Transcripts"]):
+    for i, name in enumerate(["Now", "Recordings", "Transcripts", "Dictations"]):
         w = len(name) * _cw(12) + 24
         pen.add(f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="28" rx="9" fill="{LB["tile"]}" stroke="{LB["tile_border"]}"/>')
         if i == 0:
@@ -401,7 +401,7 @@ def _draw(pen, s, clock=None):
     y = _page(pen, s, 98, clock, spots)
     # ---- the keys
     y += 12
-    pen.text(P, y + 11, "1-3 tabs · r record meeting · m mark · s screen · Esc close", 10.5, LB["dim"])
+    pen.text(P, y + 11, "1-4 tabs · r record meeting · m mark · s screen · Esc close", 10.5, LB["dim"])
     return y + 14 + P, spots
 
 

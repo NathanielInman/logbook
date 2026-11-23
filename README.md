@@ -60,8 +60,13 @@ and three bar icons became one daemon and one lamp:
 - **Do not disturb while recording.** Meetings and screen captures turn
   swaync's do not disturb on (which also hides Tannoy's song title) and give
   it back after, unless it was already on.
-- **No polling.** PipeWire's registry, voxtype's state file (inotify) and the
-  recorders report their own changes. The clock ticks once a second only
+- **Your dictation, kept.** voxtype 1.3 keeps a history of every dictation,
+  failed and cancelled ones too. The drawer's Dictations tab lists it with
+  Copy and Type it again, and turns history on, pauses and resumes it.
+  voxtype stays the backend: Logbook asks `voxtype history` and never
+  touches its files.
+- **No polling.** PipeWire's registry, voxtype's state file and history
+  folder (inotify) and the recorders report their own changes. The clock ticks once a second only
   while something records.
 
 ## The lamp
@@ -90,7 +95,10 @@ any other app on the mic, the transcript being made (with a progress bar and
 what it's queued behind) and the three most recent recordings.
 **Recordings:** every meeting and capture with its length, Open, Copy and
 Transcribe. **Transcripts:** what's queued, what failed (with Retry) and
-every meeting's transcript. <kbd>1</kbd>-<kbd>3</kbd> switch tabs,
+every meeting's transcript. **Dictations:** what voxtype kept of your
+dictation, newest first, with Copy and Type it again (into the window you
+were in), Pause, and Search and correct, which opens voxtype's own history
+window. <kbd>1</kbd>-<kbd>4</kbd> switch tabs,
 <kbd>r</kbd> records a meeting, <kbd>m</kbd> marks, <kbd>s</kbd> records the
 screen, <kbd>Esc</kbd> closes.
 
@@ -118,7 +126,8 @@ logbook doctor
 
 `pw-record` ships with PipeWire. Transcripts use
 [voxtype](https://voxtype.io) (`voxtype transcribe`) unless you point
-`transcribe.command` somewhere else; dictation needs voxtype's daemon.
+`transcribe.command` somewhere else; dictation needs voxtype's daemon, and
+the Dictations tab voxtype 1.3 or newer.
 [swaync](https://github.com/ErikReider/SwayNotificationCenter) is optional.
 
 `logbook setup` writes the transcribe task to Switchyard's `tasks.d` and asks

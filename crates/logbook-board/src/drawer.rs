@@ -1,7 +1,7 @@
 //! The drawer: what is recording now (with its clock, level meter, Stop
 //! and Mark), who else has the mic, the transcript being made, and the
-//! recordings and transcripts on disk. Three tabs: Now, Recordings,
-//! Transcripts.
+//! recordings and transcripts on disk, and what voxtype kept of your
+//! dictation. Four tabs: Now, Recordings, Transcripts, Dictations.
 
 use crate::anim::{Motion, Spring};
 use crate::meter::Meter;
@@ -12,7 +12,7 @@ use gtk::{gdk, glib};
 use gtk4_layer_shell::{Edge as LsEdge, KeyboardMode, Layer, LayerShell};
 use logbook_core::config::Config;
 use logbook_core::model::{
-    Dictation, Job, JobState, Kind, Lamp, Recording, ScreenPhase, Snapshot, Transcript,
+    Dictated, Dictation, Job, JobState, Kind, Lamp, Recording, ScreenPhase, Snapshot, Transcript,
 };
 use logbook_core::protocol::{Event, Request, What};
 use logbook_core::time::{clock, length, when};
@@ -40,8 +40,12 @@ const PLAY: &str = "\u{f040a}";
 const DOC: &str = "\u{f0219}";
 const RETRY: &str = "\u{f0450}";
 const CLOSE: &str = "\u{f0156}";
+const KEYBOARD: &str = "\u{f030c}";
+const PAUSE: &str = "\u{f03e4}";
+const RESUME: &str = "\u{f040a}";
+const SEARCH: &str = "\u{f0349}";
 
-const TABS: [&str; 3] = ["Now", "Recordings", "Transcripts"];
+const TABS: [&str; 4] = ["Now", "Recordings", "Transcripts", "Dictations"];
 
 fn label(text: &str, classes: &[&str]) -> gtk::Label {
     let l = gtk::Label::new(Some(text));
@@ -121,6 +125,23 @@ fn run(program: impl AsRef<std::ffi::OsStr>, args: &[&str]) {
             let _ = c.wait();
         });
     }
+}
+
+/// Runs a `voxtype history` command that changes whether or how history is
+/// kept, then asks the daemon to read voxtype's history again: those
+/// commands write voxtype's config, not the day files the daemon watches.
+fn history_then_rescan(args: &[&str]) {
+    let args: Vec<String> = args.iter().map(|a| a.to_string()).collect();
+    std::thread::spawn(move || {
+        let _ = std::process::Command::new("voxtype")
+            .arg("history")
+            .args(&args)
+            .stdin(std::process::Stdio::null())
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .status();
+        let _ = logbook_core::protocol::request(&Request::Rescan);
+    });
 }
 
 fn copy_file(path: String) {
@@ -209,9 +230,10 @@ pub struct Drawer {
     recent: gtk::Box,
     recordings: gtk::Box,
     transcripts: gtk::Box,
+    dictations: gtk::Box,
     /// What each part was last built from, so a snapshot that only moves
     /// the clock does not rebuild it.
-    sigs: RefCell<[String; 6]>,
+    sigs: RefCell<[String; 7]>,
     clocks: RefCell<Vec<Clock>>,
     meter: Meter,
     meter_path: RefCell<Option<String>>,
@@ -289,6 +311,7 @@ impl Drawer {
 
         let recordings = gtk::Box::new(gtk::Orientation::Vertical, 6);
         let transcripts = gtk::Box::new(gtk::Orientation::Vertical, 6);
+        let dictations = gtk::Box::new(gtk::Orientation::Vertical, 6);
         let scroll = |child: &gtk::Box| {
             let s = gtk::ScrolledWindow::new();
             s.set_policy(gtk::PolicyType::Never, gtk::PolicyType::Automatic);
@@ -305,9 +328,10 @@ impl Drawer {
         pages.add_named(&scroll(&now_page), Some("0"));
         pages.add_named(&scroll(&recordings), Some("1"));
         pages.add_named(&scroll(&transcripts), Some("2"));
+        pages.add_named(&scroll(&dictations), Some("3"));
 
         let foot = label(
-            "1-3 tabs \u{b7} r record meeting \u{b7} m mark \u{b7} s screen \u{b7} Esc close",
+            "1-4 tabs \u{b7} r record meeting \u{b7} m mark \u{b7} s screen \u{b7} Esc close",
             &["foot"],
         );
 
@@ -350,6 +374,7 @@ impl Drawer {
             recent,
             recordings,
             transcripts,
+            dictations,
             sigs: RefCell::new(Default::default()),
             clocks: RefCell::new(vec![]),
             meter: Meter::new(),
@@ -517,6 +542,7 @@ impl Drawer {
             gdk::Key::_1 | gdk::Key::KP_1 => self.select(0),
             gdk::Key::_2 | gdk::Key::KP_2 => self.select(1),
             gdk::Key::_3 | gdk::Key::KP_3 => self.select(2),
+            gdk::Key::_4 | gdk::Key::KP_4 => self.select(3),
             gdk::Key::Tab => self.select((self.tab.get() + 1) % TABS.len()),
             gdk::Key::ISO_Left_Tab => self.select((self.tab.get() + TABS.len() - 1) % TABS.len()),
             gdk::Key::r => {
@@ -681,6 +707,7 @@ impl Drawer {
         self.render_recent(&s);
         self.render_recordings(&s);
         self.render_transcripts(&s);
+        self.render_dictations(&s);
         self.tick();
     }
 
@@ -1224,6 +1251,189 @@ impl Drawer {
             t.set_wrap(true);
             c.append(&t);
             self.transcripts.append(&c);
+        }
+    }
+
+    /// One dictation as a row: what was said, when, how long, where, and
+    /// Copy and Type it again. voxtype does both, from its own history.
+    fn dictation_row(self: &Rc<Self>, e: &Dictated, now: f64) -> gtk::Box {
+        let row = gtk::Box::new(gtk::Orientation::Horizontal, 10);
+        row.add_css_class("item");
+        row.append(&label(
+            MIC,
+            &["glyph", if e.delivered() { "kind" } else { "bad" }],
+        ));
+        let text = gtk::Box::new(gtk::Orientation::Vertical, 1);
+        text.set_hexpand(true);
+        let said = if e.text.is_empty() {
+            label("nothing heard", &["dim"])
+        } else {
+            let l = label(&e.text, &["title"]);
+            l.set_wrap(true);
+            l.set_wrap_mode(gtk::pango::WrapMode::WordChar);
+            l.set_lines(2);
+            l.set_ellipsize(gtk::pango::EllipsizeMode::End);
+            l.set_tooltip_text(Some(&e.text));
+            l
+        };
+        text.append(&said);
+        let mut sub = vec![when(e.started, now), length(e.length)];
+        if let Some(app) = &e.app {
+            sub.push(app.clone());
+        }
+        if e.corrected {
+            sub.push("corrected".into());
+        }
+        let outcome = logbook_core::voxtype::outcome_words(&e.outcome);
+        if !outcome.is_empty() {
+            sub.push(outcome.into());
+        }
+        let sl = label(&sub.join(" \u{b7} "), &["dim", "small"]);
+        sl.set_ellipsize(gtk::pango::EllipsizeMode::End);
+        if let Some(err) = &e.error {
+            sl.set_tooltip_text(Some(err));
+        }
+        text.append(&sl);
+        row.append(&text);
+        if !e.text.is_empty() {
+            let b = button(COPY, "Copy", &["small"]);
+            b.set_valign(gtk::Align::Center);
+            let id = e.id.clone();
+            self.bind(&b, move |_| run("voxtype", &["history", "copy", &id]));
+            row.append(&b);
+            let b = button(KEYBOARD, "", &["small", "icon"]);
+            b.set_valign(gtk::Align::Center);
+            b.set_tooltip_text(Some("Type it again where you were"));
+            let id = e.id.clone();
+            self.bind(&b, move |d| {
+                // The drawer holds the keyboard: close it, and let voxtype
+                // wait for focus to go back before it types.
+                d.hide();
+                run("voxtype", &["history", "paste", &id, "--delay-ms", "350"]);
+            });
+            row.append(&b);
+        }
+        row
+    }
+
+    fn render_dictations(self: &Rc<Self>, s: &Snapshot) {
+        let h = &s.history;
+        let t = logbook_core::now();
+        let sig = format!(
+            "{}:{}:{}:{}:{}|{}",
+            h.known,
+            h.enabled,
+            h.paused,
+            h.count,
+            h.retention_days,
+            h.entries
+                .iter()
+                .map(|e| format!("{}:{}:{}:{}", e.id, e.text, e.corrected, when(e.started, t)))
+                .collect::<Vec<_>>()
+                .join("|")
+        );
+        if self.sigs.borrow()[6] == sig {
+            return;
+        }
+        self.sigs.borrow_mut()[6] = sig;
+        clear(&self.dictations);
+
+        if !h.known {
+            let c = card(&[]);
+            let l = label(
+                "voxtype is not answering. Dictation history needs voxtype 1.3 or newer.",
+                &[],
+            );
+            l.set_wrap(true);
+            c.append(&l);
+            self.dictations.append(&c);
+            return;
+        }
+        let kept = if h.retention_days == 0 {
+            "kept for good".to_string()
+        } else {
+            format!("kept {} days", h.retention_days)
+        };
+        if !h.enabled || h.paused {
+            let c = card(&[]);
+            c.append(&lab_row(
+                "Dictation history",
+                if h.enabled { "paused" } else { "off" },
+            ));
+            let l = label(
+                &if h.enabled {
+                    "Paused: nothing you dictate is kept until you resume.".to_string()
+                } else {
+                    format!(
+                        "voxtype is not keeping what you dictate. Turned on, every dictation lands here, failed and cancelled ones too, {kept}."
+                    )
+                },
+                &[],
+            );
+            l.set_wrap(true);
+            c.append(&l);
+            let btns = gtk::Box::new(gtk::Orientation::Horizontal, 8);
+            btns.add_css_class("btns");
+            let b = if h.enabled {
+                let b = button(RESUME, "Resume", &["primary"]);
+                self.bind(&b, |_| history_then_rescan(&["resume"]));
+                b
+            } else {
+                let b = button(MIC, "Turn on", &["primary"]);
+                self.bind(&b, |_| history_then_rescan(&["enable"]));
+                b
+            };
+            btns.append(&b);
+            c.append(&btns);
+            self.dictations.append(&c);
+        }
+
+        if h.entries.is_empty() {
+            if h.keeping() {
+                let c = card(&[]);
+                let l = label(
+                    &format!(
+                        "Nothing dictated yet. Each dictation lands here as voxtype types it, {kept}."
+                    ),
+                    &[],
+                );
+                l.set_wrap(true);
+                c.append(&l);
+                self.dictations.append(&c);
+            }
+        } else {
+            let shown = h.entries.len() as u32;
+            let right = if h.count > shown {
+                format!("newest {shown}")
+            } else {
+                "newest first".into()
+            };
+            self.dictations.append(&lab_row(
+                &format!("{} \u{b7} {kept}", plural(h.count.max(shown), "dictation")),
+                &right,
+            ));
+            for e in &h.entries {
+                self.dictations.append(&self.dictation_row(e, s.now));
+            }
+        }
+
+        if h.enabled {
+            let btns = gtk::Box::new(gtk::Orientation::Horizontal, 8);
+            btns.add_css_class("btns");
+            let b = button(SEARCH, "Search and correct", &["small"]);
+            b.set_tooltip_text(Some("voxtype's history window"));
+            self.bind(&b, |d| {
+                d.hide();
+                run("voxtype", &["history", "view"]);
+            });
+            btns.append(&b);
+            if !h.paused {
+                let b = button(PAUSE, "Pause", &["small"]);
+                b.set_tooltip_text(Some("Keep nothing you dictate until you resume"));
+                self.bind(&b, |_| history_then_rescan(&["pause"]));
+                btns.append(&b);
+            }
+            self.dictations.append(&btns);
         }
     }
 }

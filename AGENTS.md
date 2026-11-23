@@ -16,8 +16,9 @@ for whatever you change.
   (`yard.rs`), waybar's CSS (`waybar.rs`). No processes, no PipeWire, no
   GTK.
 - `logbook`: the daemon (`daemon.rs`), child ownership (`proc.rs`), the
-  PipeWire thread (`pw.rs`), the voxtype watch (`voxwatch.rs`), the
-  transcribe worker (`transcribe.rs`), the CLI and the waybar line.
+  PipeWire thread (`pw.rs`), the voxtype watches on its state and history
+  (`voxwatch.rs`), the transcribe worker (`transcribe.rs`), the CLI and the
+  waybar line.
 - `logbook-board`: the GTK4 layer-shell drawer. `anim.rs` and `stage.rs`
   came from Roundhouse's board by way of Tannoy.
 
@@ -35,8 +36,14 @@ test with a real sample when you touch one.
 
 This machine may run an installed Logbook, and the mic is real. Point a dev
 build elsewhere with `LOGBOOK_RUNTIME_DIR`, `LOGBOOK_STATE_DIR` and
-`LOGBOOK_CONFIG_DIR`, and give it a config whose `meeting.dir` and
-`screen.dir` are scratch folders with `dnd = false`.
+`LOGBOOK_CONFIG_DIR` (keep the runtime dir short, such as
+`$XDG_RUNTIME_DIR/lbdev`: the socket path must fit in 107 bytes), and give
+it a config whose `meeting.dir` and `screen.dir` are scratch folders with
+`dnd = false`. Set `XDG_DATA_HOME` to a
+scratch folder with `voxtype/history/YYYY-MM-DD.jsonl` in it to give the
+Dictations tab made-up history: the real `voxtype history list` reads it.
+The drawer's Turn on, Pause and Resume write voxtype's real config; give
+voxtype a scratch one with `XDG_CONFIG_HOME` before clicking them.
 
 Never test recording against the real microphone. WirePlumber here ignores
 `pw-record --target` for a virtual source and links the default mic anyway.
@@ -73,8 +80,10 @@ Update in the same commit:
   rule.
 - The README for anything a new user meets (CLI, keys, install, config).
 - `docs/assets/drawer.png` when the drawer looks different (render it with
-  `--render`), and `drawer()` in `docs/assets/hero.py` to match (then run
-  `python3 docs/assets/hero.py`). dot-files' bar tour ports that function.
+  `--render`, the board's `XDG_DATA_HOME` on a scratch folder so it draws in
+  the fallback mono the hero uses, not your own fonts), and `drawer()` in
+  `docs/assets/hero.py` to match (then run `python3 docs/assets/hero.py`).
+  dot-files' bar tour ports that function.
 
 Commits are conventional, scoped by area: `anchor`, `core`, `plan`, `mic`,
 `daemon`, `cli`, `board`, `docs`, `ci`.
