@@ -113,6 +113,69 @@ pub fn chunk_number(name: &str) -> Option<u32> {
     num(rest.split('-').next()?)
 }
 
+/// Days from 1970-01-01 to a civil date (Howard Hinnant's algorithm), so
+/// an instant with its own offset needs no time zone database.
+fn days_from_civil(y: i64, m: u32, d: u32) -> i64 {
+    let y = if m <= 2 { y - 1 } else { y };
+    let era = if y >= 0 { y } else { y - 399 } / 400;
+    let yoe = y - era * 400;
+    let mp = (m as i64 + 9) % 12;
+    let doy = (153 * mp + 2) / 5 + d as i64 - 1;
+    let doe = yoe * 365 + yoe / 4 - yoe / 100 + doy;
+    era * 146097 + doe - 719468
+}
+
+/// Unix seconds for an RFC 3339 instant, as voxtype's history writes them:
+/// `2026-11-23T09:15:02.418-06:00`, any number of fraction digits, or `Z`.
+pub fn rfc3339(s: &str) -> Option<f64> {
+    let s = s.trim();
+    let b = s.as_bytes();
+    if b.len() < 20 || b[4] != b'-' || b[7] != b'-' || !matches!(b[10], b'T' | b't' | b' ') {
+        return None;
+    }
+    if b[13] != b':' || b[16] != b':' {
+        return None;
+    }
+    let year: i64 = num(s.get(0..4)?)?.into();
+    let month = num(s.get(5..7)?)?;
+    let day = num(s.get(8..10)?)?;
+    let hour = num(s.get(11..13)?)?;
+    let min = num(s.get(14..16)?)?;
+    let sec = num(s.get(17..19)?)?;
+    if !(1..=12).contains(&month) || !(1..=31).contains(&day) || hour > 23 || min > 59 || sec > 60 {
+        return None;
+    }
+    let mut rest = s.get(19..)?;
+    let mut frac = 0.0;
+    if let Some(r) = rest.strip_prefix('.') {
+        let digits = r.bytes().take_while(u8::is_ascii_digit).count();
+        if digits == 0 {
+            return None;
+        }
+        frac = format!("0.{}", &r[..digits]).parse().ok()?;
+        rest = &r[digits..];
+    }
+    let offset = match rest {
+        "Z" | "z" => 0,
+        _ => {
+            let sign = match rest.as_bytes().first()? {
+                b'+' => 1,
+                b'-' => -1,
+                _ => return None,
+            };
+            let hm = rest.get(1..)?;
+            if hm.len() != 5 || hm.as_bytes()[2] != b':' {
+                return None;
+            }
+            let (h, m) = (num(&hm[0..2])?, num(&hm[3..5])?);
+            sign * (h as i64 * 3600 + m as i64 * 60)
+        }
+    };
+    let days = days_from_civil(year, month, day);
+    let secs = days * 86400 + hour as i64 * 3600 + min as i64 * 60 + sec as i64 - offset;
+    Some(secs as f64 + frac)
+}
+
 /// `01:02:03`.
 pub fn clock(secs: f64) -> String {
     let s = secs.max(0.0).floor() as u64;
@@ -209,6 +272,26 @@ mod tests {
         assert_eq!(chunk_number("chunk-012-100207.wav"), Some(12));
         assert_eq!(parse_meeting_name("notes"), None);
         assert_eq!(parse_screen_name("recording-2026.mp4"), None);
+    }
+
+    #[test]
+    fn instants_with_their_own_offset() {
+        // 2026-11-23 15:15:02 UTC.
+        let utc = 1_795_446_902.0;
+        assert_eq!(rfc3339("2026-11-23T15:15:02Z"), Some(utc));
+        assert_eq!(rfc3339("2026-11-23T09:15:02-06:00"), Some(utc));
+        assert_eq!(rfc3339("2026-11-23T20:45:02+05:30"), Some(utc));
+        let t = rfc3339("2026-11-23T09:15:02.418-06:00").unwrap();
+        assert!((t - (utc + 0.418)).abs() < 1e-6);
+        let t = rfc3339("2026-11-23T09:15:02.418123456-06:00").unwrap();
+        assert!((t - (utc + 0.418123456)).abs() < 1e-6);
+        assert_eq!(rfc3339("1970-01-01T00:00:00Z"), Some(0.0));
+        assert_eq!(rfc3339("2024-02-29T00:00:00Z"), Some(1_709_164_800.0));
+        assert_eq!(rfc3339("2026-11-23"), None);
+        assert_eq!(rfc3339("2026-11-23T09:15:02"), None);
+        assert_eq!(rfc3339("2026-13-23T09:15:02Z"), None);
+        assert_eq!(rfc3339("2026-11-23T09:15:02.Z"), None);
+        assert_eq!(rfc3339("2026-11-23T09:15:02-0600"), None);
     }
 
     #[test]
