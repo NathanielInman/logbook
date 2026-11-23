@@ -22,6 +22,8 @@ use std::rc::Rc;
 use std::time::Duration;
 
 pub enum Msg {
+    /// Another app's drawer opened: close this one.
+    OtherDrawerOpened,
     Event(Event),
     /// A watched stylesheet or the config changed.
     Restyle,
@@ -477,6 +479,7 @@ impl Drawer {
 
     pub fn handle(self: &Rc<Self>, msg: Msg) {
         match msg {
+            Msg::OtherDrawerOpened => self.hide(),
             Msg::Event(Event::Snapshot { snapshot }) => {
                 self.skew.set(snapshot.now - logbook_core::now());
                 *self.snap.borrow_mut() = Some(*snapshot);
@@ -552,6 +555,7 @@ impl Drawer {
         self.stage.set_anchor(anchor);
         let was_visible = self.visible.replace(true);
         if !was_visible {
+            bar_anchor::drawers::opened("logbook");
             self.select(0);
         }
         self.render();

@@ -131,6 +131,16 @@ pub fn main() -> glib::ExitCode {
         }
         apply_styles();
         let (tx, rx) = async_channel::unbounded::<Msg>();
+        // One drawer open at a time across the apps: another app's drawer
+        // opening closes this one.
+        let drawers = {
+            let tx = tx.clone();
+            bar_anchor::drawers::listen("logbook", move || {
+                let _ = tx.send_blocking(Msg::OtherDrawerOpened);
+            })
+            .inspect_err(|e| eprintln!("logbook-board: {e}"))
+            .ok()
+        };
         let drawer = Drawer::new(app, tx.clone());
         for path in [
             logbook_core::waybar::style_path(),
@@ -148,6 +158,7 @@ pub fn main() -> glib::ExitCode {
         }
         std::thread::spawn(move || connection(tx));
         glib::spawn_future_local(async move {
+            let _drawers = drawers;
             while let Ok(msg) = rx.recv().await {
                 drawer.handle(msg);
             }
