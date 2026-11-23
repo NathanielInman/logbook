@@ -50,7 +50,7 @@ Crates:
 
 | Crate | What |
 |---|---|
-| `bar-anchor` | Hyprland anchoring and panel placement, copied from Roundhouse. |
+| [`bar-anchor`](https://github.com/NathanielInman/bar-anchor) | Anchoring and panel placement, shared by the waybar apps and pinned by tag in the root `Cargo.toml`. |
 | `logbook-core` | Paths, config, model, socket protocol, recordings on disk, the transcript plan, and the WAV, MP4, PipeWire-graph, voxtype and Switchyard parsers. No processes, no PipeWire, no GTK. |
 | `logbook` | The daemon, the CLI, the waybar module and the transcribe worker. |
 | `logbook-board` | The drawer. |

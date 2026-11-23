@@ -5,9 +5,10 @@ for whatever you change.
 
 ## Crates
 
-- `bar-anchor`: Hyprland anchoring and panel placement, no GTK. A copy of
-  Roundhouse's; its `Anchor` JSON must stay identical to Roundhouse's,
-  Switchyard's and Tannoy's.
+- `bar-anchor` is no longer in this repo: it's the shared
+  [bar-anchor](https://github.com/NathanielInman/bar-anchor) crate, pinned by tag in the root `Cargo.toml`.
+  Change it there and move the tag; its `Anchor` JSON must stay
+  identical across the apps.
 - `logbook-core`: paths, config, the model and lamp order (`model.rs`), the
   socket protocol, the recordings on disk (`library.rs`), the transcript plan
   (`plan.rs`), and the parsers: WAV and MP4 (`media.rs`), PipeWire's graph
