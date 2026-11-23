@@ -1,0 +1,34 @@
+# What dot-files needs to know about Logbook. Its README is built from this
+# file (docs/bar/build.py in NathanielInman/dotfiles reads it beside the
+# hero), so a change here reaches that README on its next build.
+
+name = "Logbook"
+repo = "https://github.com/NathanielInman/logbook"
+language = "Rust"
+# Its module in packages/waybar/.config/waybar/config.jsonc.
+module = "custom/logbook"
+# "Logbook for <purpose>" in the README's list of the suite.
+purpose = "the mic"
+# The "In the bar" cell of the suite table.
+lamp = "On Air for meetings, captures, dictation and any app with the mic"
+# Scripts and programs it replaced. dot-files' build fails if a doc still
+# mentions one outside a sentence that says it was replaced.
+retired = [
+  "meeting-record.sh",
+  "screen-record.sh",
+  "voxtype-status.sh",
+]
+# Its stow package in dot-files, or "" when it needs none.
+stow = ""
+# Install from a clean Arch machine, run in order.
+install = [
+  "sudo pacman -S --needed gtk4 gtk4-layer-shell pipewire clang wf-recorder slurp ffmpeg wl-clipboard",
+  "git clone https://github.com/NathanielInman/logbook.git ~/Sites/logbook",
+  "cd ~/Sites/logbook && cargo build --release",
+  "install -Dm755 target/release/logbook target/release/logbook-board -t ~/.local/bin/",
+  "logbook setup --systemd   # the Switchyard task and the user service",
+]
+# Run after installing (and stowing) to check the setup.
+check = [
+  "logbook doctor",
+]
