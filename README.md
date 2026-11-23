@@ -17,7 +17,7 @@
 <p align="center">
   <a href="https://github.com/NathanielInman/logbook/actions/workflows/ci.yml"><img src="https://github.com/NathanielInman/logbook/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/NathanielInman/logbook/releases/latest"><img src="https://img.shields.io/github/v/release/NathanielInman/logbook?color=88c0d0&amp;label=release" alt="Latest release"></a>
-  <img src="https://img.shields.io/badge/status-early%20(0.1)-ebcb8b" alt="Early, version 0.1">
+  <img src="https://img.shields.io/badge/status-early%20(0.2)-ebcb8b" alt="Early, version 0.2">
   <img src="https://img.shields.io/badge/Arch%20%2B%20Hyprland%20first-Linux%20%C2%B7%20Wayland-a3be8c" alt="Arch and Hyprland first; Linux with Wayland">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-b48ead" alt="MIT license"></a>
 </p>
@@ -107,7 +107,7 @@ take `--json`.
 
 ## Install
 
-Logbook is at 0.1 and runs on Linux with Wayland and PipeWire; Hyprland gets
+Logbook is at 0.2 and runs on Linux with Wayland and PipeWire; Hyprland gets
 the exact-icon anchoring. Grab a tarball from the
 [releases](https://github.com/NathanielInman/logbook/releases) or build it:
 
