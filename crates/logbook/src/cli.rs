@@ -442,6 +442,26 @@ fn status(json: bool) -> Result<i32> {
             Dictation::Transcribing => "typing",
         },
     );
+    let h = &s.history;
+    row(
+        "history",
+        &if !h.known {
+            "unknown (needs voxtype 1.3 or newer)".to_string()
+        } else {
+            let kept = match h.count {
+                1 => "1 dictation kept".to_string(),
+                n => format!("{n} dictations kept"),
+            };
+            let state = if !h.enabled {
+                "off"
+            } else if h.paused {
+                "paused"
+            } else {
+                "on"
+            };
+            format!("{state} \u{b7} {kept}")
+        },
+    );
     if !s.mic_known {
         row("mic", "unknown (PipeWire is not answering)");
     } else if s.mic.is_empty() {

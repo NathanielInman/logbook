@@ -40,6 +40,8 @@ logbook daemon ──owns──> pw-record (one per 15 minute chunk)
       │         ──run───> Switchyard task logbook-transcribe  (with Switchyard)
       │ <─registry── PipeWire (capture streams and their links)
       │ <─inotify─── $XDG_RUNTIME_DIR/voxtype/state, pidfd on voxtype's pid
+      │ <─inotify─── $XDG_DATA_HOME/voxtype/history (day files only)
+      │ ──run───> voxtype history list --json   (short helper, off the lock)
       │
       ├── socket ──> logbook bar        (waybar custom module, JSON lines)
       ├── socket ──> logbook-board      (GTK4 layer-shell drawer)
@@ -199,6 +201,32 @@ voxtype keeps `$XDG_RUNTIME_DIR/voxtype/state` (`idle`, `recording`,
 so a crash turns dictation off without polling. A dead pid reads as
 `stopped`.
 
+### History
+
+voxtype 1.3 keeps every dictation, failed and cancelled ones too, as one
+JSON line in `$XDG_DATA_HOME/voxtype/history/YYYY-MM-DD.jsonl` (gzipped
+after a week, pruned after `history.retention_days`). voxtype is the
+backend: the daemon reads `voxtype history list --json -n <drawer.recent>`,
+never the day files, and the drawer changes history only through
+`voxtype history` commands. voxtype's privacy controls (pause, disable) and
+its file format stay voxtype's.
+
+The daemon asks again at start, when the drawer opens, on `rescan`, and
+when the history folder changes. It watches the folder with inotify for a
+day file written (`IN_CLOSE_WRITE`), replaced (a correction or delete
+rewrites the whole day through a temporary file) or removed, and waits for
+200 ms of quiet before asking. The `.lock` every `voxtype history` command
+takes, Logbook's own reads included, is not a change, so a read never wakes
+the watch. Until voxtype makes the folder, the nearest folder above it is
+watched for it to appear. One read runs at a time, so a slow one never lands
+after a newer one.
+
+`history` in the snapshot holds `known` (voxtype answered; false without
+voxtype or before 1.3), `enabled`, `paused`, `retention_days`, `count` and
+the newest `entries`: `id`, `started`, `length`, `text` (the user's
+correction, else what was typed, else what the engine heard, as `voxtype
+history copy` picks), `corrected`, `app`, `outcome` and `error`.
+
 ## The bar
 
 `logbook bar` subscribes and prints one JSON line per change:
@@ -237,9 +265,11 @@ colors from waybar's `style.css` (`theme.from = "waybar"`), then the user's
 | `~/.config/logbook/config.toml`, `style.css` | Config and drawer style. |
 | `~/.local/state/logbook/queue.json` | Transcripts waiting. |
 | `~/.local/state/logbook/{daemon,board,transcribe}.log` | Logs. |
+| `$XDG_DATA_HOME/voxtype/history/` | voxtype's dictation history: watched, never read or written. |
 
 `LOGBOOK_RUNTIME_DIR`, `LOGBOOK_STATE_DIR`, `LOGBOOK_CONFIG_DIR` and
-`LOGBOOK_VOXTYPE_DIR` move them, for development.
+`LOGBOOK_VOXTYPE_DIR` move them, for development. `XDG_DATA_HOME` moves
+voxtype's history and Logbook's watch on it together.
 
 ## Protocol
 

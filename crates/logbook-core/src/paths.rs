@@ -117,6 +117,17 @@ pub fn voxtype_dir() -> Option<PathBuf> {
     xdg_runtime().map(|d| d.join("voxtype"))
 }
 
+/// voxtype's dictation history, as voxtype finds it:
+/// `$XDG_DATA_HOME/voxtype/history`. The daemon watches it to know when to
+/// ask `voxtype history list` again; a dev build that sets `XDG_DATA_HOME`
+/// moves voxtype's history and this together.
+pub fn voxtype_history_dir() -> PathBuf {
+    env_dir("XDG_DATA_HOME")
+        .unwrap_or_else(|| home().join(".local/share"))
+        .join("voxtype")
+        .join("history")
+}
+
 /// Switchyard's socket, as Switchyard itself finds it.
 pub fn switchyard_socket() -> PathBuf {
     if let Some(d) = env_dir("SWITCHYARD_RUNTIME_DIR") {

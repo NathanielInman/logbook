@@ -82,7 +82,7 @@ pub enum Request {
     Forget {
         dir: String,
     },
-    /// Lists the recordings on disk again.
+    /// Lists the recordings on disk and voxtype's dictation history again.
     Rescan,
     /// Sent by `logbook transcribe` as it goes.
     Progress {

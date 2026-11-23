@@ -16,8 +16,8 @@ use crate::proc::{self, Owned};
 use anyhow::{anyhow, Result};
 use logbook_core::config::Config;
 use logbook_core::model::{
-    self, Dictation, Job, JobState, Kind, Meeting, MicUser, Recording, Screen, ScreenPhase,
-    Snapshot, Transcript,
+    self, Dictation, History, Job, JobState, Kind, Meeting, MicUser, Recording, Screen,
+    ScreenPhase, Snapshot, Transcript,
 };
 use logbook_core::protocol::{Event, Reply, Request, SubKind, What};
 use logbook_core::transport::{Listener, Stream};
@@ -83,6 +83,8 @@ struct State {
     /// ends without the worker reporting is noticed.
     yard_seen_busy: bool,
     recordings: Vec<Recording>,
+    /// voxtype's dictation history, as it last answered.
+    history: History,
     dnd_held: bool,
     problem: Option<String>,
     snap: Snapshot,
@@ -102,6 +104,9 @@ pub struct Daemon {
     cv: Condvar,
     /// Serializes do not disturb changes, which run outside the state lock.
     dnd: Mutex<()>,
+    /// Serializes history reads, so a slow one never lands after a newer
+    /// one.
+    history_scan: Mutex<()>,
 }
 
 type Shared = Arc<Daemon>;
@@ -172,6 +177,7 @@ fn refresh(st: &mut State) {
         mic_known: st.mic_known,
         jobs: st.jobs.clone(),
         recordings,
+        history: st.history.clone(),
         dnd_held: st.dnd_held,
         config_error: st.cfg_error.clone(),
         problem: st.problem.clone(),
@@ -271,6 +277,34 @@ fn rescan(d: &Shared) {
         let mut st = d.lock();
         st.recordings = list;
         refresh(&mut st);
+    });
+}
+
+/// How long `voxtype history list` may take; it reads a week of day files
+/// and gunzips older ones only as far as it needs.
+const HISTORY_WAIT: Duration = Duration::from_secs(10);
+
+/// Asks voxtype for its dictation history again, off the lock. voxtype is
+/// the backend: Logbook reads what `voxtype history list --json` prints and
+/// never the day files. Without voxtype, or with one older than 1.3, the
+/// history is unknown.
+fn rescan_history(d: &Shared) {
+    let d = d.clone();
+    std::thread::spawn(move || {
+        let _g = d.history_scan.lock().unwrap_or_else(|e| e.into_inner());
+        let limit = d.lock().cfg.drawer.recent.max(1).to_string();
+        let history = proc::output(
+            "voxtype",
+            &["history", "list", "--json", "-n", &limit],
+            HISTORY_WAIT,
+        )
+        .and_then(|out| logbook_core::voxtype::history(&out))
+        .unwrap_or_default();
+        let mut st = d.lock();
+        if st.history != history {
+            st.history = history;
+            refresh(&mut st);
+        }
     });
 }
 
@@ -1089,6 +1123,7 @@ fn handle(d: Shared, stream: Stream) {
                 drop(st);
                 if visible {
                     rescan(&d);
+                    rescan_history(&d);
                 }
                 Reply::ok()
             }
@@ -1122,6 +1157,7 @@ fn handle(d: Shared, stream: Stream) {
             }
             Request::Rescan => {
                 rescan(&d);
+                rescan_history(&d);
                 Reply::ok()
             }
             Request::Progress {
@@ -1261,6 +1297,7 @@ pub fn run() -> Result<i32> {
             direct: None,
             yard_seen_busy: false,
             recordings: vec![],
+            history: History::default(),
             dnd_held: false,
             problem: None,
             snap: Snapshot::default(),
@@ -1275,6 +1312,7 @@ pub fn run() -> Result<i32> {
         }),
         cv: Condvar::new(),
         dnd: Mutex::new(()),
+        history_scan: Mutex::new(()),
     });
     {
         let d = d.clone();
@@ -1291,6 +1329,7 @@ pub fn run() -> Result<i32> {
         refresh(&mut st);
     }
     rescan(&d);
+    rescan_history(&d);
     {
         let d = d.clone();
         std::thread::Builder::new()
@@ -1322,6 +1361,10 @@ pub fn run() -> Result<i32> {
                 }
             })
         });
+    }
+    {
+        let d = d.clone();
+        std::thread::spawn(move || crate::voxwatch::watch_history(|| rescan_history(&d)));
     }
     {
         let d = d.clone();

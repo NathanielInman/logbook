@@ -204,6 +204,59 @@ pub struct Recording {
     pub bytes: u64,
 }
 
+/// One dictation from voxtype's history.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Default)]
+pub struct Dictated {
+    /// voxtype's ID (`20261123-091502-a1b2c3`), which its `history`
+    /// commands take.
+    pub id: String,
+    /// Unix seconds.
+    pub started: f64,
+    /// Seconds of audio.
+    pub length: f64,
+    /// What Copy gives: the user's correction, else what was typed, else
+    /// what the engine heard. Empty when nothing was heard.
+    pub text: String,
+    /// The text is the user's own correction.
+    pub corrected: bool,
+    /// The app that had focus (`kitty`, `google-chrome`), when voxtype knew.
+    pub app: Option<String>,
+    /// voxtype's word for how it ended: `delivered`, `cancelled`,
+    /// `no_speech`, `too_short`, `empty`, `output_failed` or
+    /// `transcription_failed`.
+    pub outcome: String,
+    pub error: Option<String>,
+}
+
+impl Dictated {
+    pub fn delivered(&self) -> bool {
+        self.outcome == "delivered"
+    }
+}
+
+/// voxtype's dictation history, from `voxtype history list --json`.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Default)]
+pub struct History {
+    /// voxtype answered. False when it is not installed, or too old to keep
+    /// a history (before 1.3).
+    pub known: bool,
+    pub enabled: bool,
+    pub paused: bool,
+    /// Days voxtype keeps; 0 keeps everything.
+    pub retention_days: u32,
+    /// Dictations kept in all, which can be more than `entries` holds.
+    pub count: u32,
+    /// The most recent, newest first, at most `drawer.recent`.
+    pub entries: Vec<Dictated>,
+}
+
+impl History {
+    /// What is dictated now is being kept.
+    pub fn keeping(&self) -> bool {
+        self.known && self.enabled && !self.paused
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Default)]
 pub struct Snapshot {
     pub version: String,
@@ -219,6 +272,9 @@ pub struct Snapshot {
     pub mic_known: bool,
     pub jobs: Vec<Job>,
     pub recordings: Vec<Recording>,
+    /// What voxtype has kept of your dictation.
+    #[serde(default)]
+    pub history: History,
     /// Logbook turned do not disturb on and will turn it off again.
     pub dnd_held: bool,
     pub config_error: Option<String>,
